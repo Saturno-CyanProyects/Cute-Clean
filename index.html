@@ -3,12 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Cute & Clean | Home Care Boutique</title>
-  <meta name="description" content="Catálogo elegante e interactivo de productos de limpieza Cute & Clean." />
+  <title>Cute & Clean | Limpieza premium para el hogar</title>
+  <meta name="description" content="Catálogo elegante e interactivo de productos de limpieza Cute & Clean: detergente, suavizante, jabón líquido y desinfectante con aromas premium." />
   <meta name="theme-color" content="#F6EFE3" />
+  <link rel="icon" href="./cute_clean_luxury_site/assets/favicon.svg" type="image/svg+xml" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
   <style>
     :root {
       --ivory: #f7f0e6;
@@ -20,8 +22,8 @@
       --gold: #b79a59;
       --gold-deep: #8f6f2e;
       --sage: #71866a;
-      --cream-card: rgba(255, 250, 242, 0.84);
-      --glass: rgba(255, 250, 242, 0.72);
+      --cream-card: rgba(255, 250, 242, 0.82);
+      --glass: rgba(255, 250, 242, 0.68);
       --border: rgba(183, 154, 89, 0.26);
       --border-strong: rgba(143, 111, 46, 0.38);
       --shadow-soft: 0 28px 80px rgba(38, 59, 44, 0.12);
@@ -32,8 +34,16 @@
       --ease: cubic-bezier(.2,.8,.2,1);
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
     body {
       min-height: 100vh;
       font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
@@ -45,180 +55,1498 @@
       overflow-x: hidden;
     }
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
-    button, input, select { font: inherit; }
-    .page-shell { width: min(1160px, calc(100% - 32px)); margin: 0 auto; }
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: 0.28;
+      background-image:
+        linear-gradient(115deg, transparent 0 44%, rgba(255,255,255,.62) 46%, transparent 48% 100%),
+        linear-gradient(25deg, rgba(143,111,46,.06) 1px, transparent 1px);
+      background-size: 680px 680px, 34px 34px;
+      z-index: -2;
+    }
+
+    body::after {
+      content: "";
+      position: fixed;
+      inset: auto -12vw -30vh auto;
+      width: 44vw;
+      height: 44vw;
+      border-radius: 50%;
+      background: rgba(183,154,89,.13);
+      filter: blur(40px);
+      z-index: -1;
+      pointer-events: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    button, input, select, textarea {
+      font: inherit;
+    }
+
+    .page-shell {
+      width: min(1180px, calc(100% - 36px));
+      margin-inline: auto;
+    }
 
     .topbar {
-      position: sticky; top: 14px; z-index: 50; margin-top: 14px;
+      position: sticky;
+      top: 14px;
+      z-index: 80;
+      margin-top: 14px;
       border: 1px solid var(--border);
-      background: rgba(255, 250, 242, 0.76);
-      backdrop-filter: blur(22px);
       border-radius: 999px;
-      box-shadow: 0 18px 50px rgba(38, 59, 44, 0.08);
+      background: rgba(255, 250, 242, 0.76);
+      backdrop-filter: blur(18px);
+      box-shadow: 0 18px 60px rgba(38, 59, 44, 0.08);
     }
-    .nav { display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 12px 16px 12px 22px; }
-    .brand { display: inline-flex; align-items: center; gap: 12px; color: var(--ink); white-space: nowrap; }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 12px 14px 12px 20px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--ink);
+      white-space: nowrap;
+    }
+
     .brand-mark {
-      width: 42px; height: 42px; border-radius: 50%; display: grid; place-items: center;
-      background: linear-gradient(135deg, #233b2a, #4f714c);
-      color: #fffaf2; font-family: "Cormorant Garamond", serif; font-size: 1.4rem; font-weight: 700;
-      box-shadow: 0 0 0 8px rgba(183, 154, 89, 0.14), 0 18px 34px rgba(38, 59, 44, 0.16);
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background:
+        radial-gradient(circle at 35% 28%, rgba(255,255,255,.95) 0 13%, transparent 14%),
+        linear-gradient(135deg, var(--ink), #445d45);
+      box-shadow: 0 0 0 7px rgba(183, 154, 89, 0.13), 0 18px 38px rgba(38, 59, 44, 0.18);
+      color: #fffaf2;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.75rem;
+      font-weight: 700;
+      line-height: 1;
     }
-    .brand-text small { display: block; color: var(--gold-deep); font-size: .66rem; font-weight: 800; letter-spacing: .24em; text-transform: uppercase; margin-top: 2px; }
-    .brand-text strong { display: block; color: var(--ink); font-family: "Cormorant Garamond", serif; font-size: clamp(1.75rem, 3.2vw, 2.55rem); line-height: .85; letter-spacing: -.055em; }
-    .nav-links { display: flex; align-items: center; gap: 8px; list-style: none; }
-    .nav-links a { min-height: 42px; padding: 0 16px; border-radius: 999px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); font-weight: 800; transition: .22s var(--ease); }
-    .nav-links a:hover { background: rgba(255, 250, 242, 0.82); transform: translateY(-1px); }
-    .nav-whatsapp { color: #fffaf2 !important; background: linear-gradient(135deg, #223f2d, #3f623b); box-shadow: 0 14px 30px rgba(38, 59, 44, 0.18); }
 
-    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(330px, .88fr); gap: 44px; align-items: center; padding: 82px 0 72px; }
-    .eyebrow { display: inline-flex; align-items: center; gap: 12px; margin-bottom: 16px; color: var(--gold-deep); font-size: .78rem; font-weight: 900; letter-spacing: .27em; text-transform: uppercase; }
-    .eyebrow::before { content: ""; width: 50px; height: 1px; background: var(--gold); }
-    h1, h2, h3 { color: var(--ink); line-height: 1.02; }
-    h1 { font-family: "Cormorant Garamond", serif; font-size: clamp(3.7rem, 8vw, 7.6rem); letter-spacing: -.06em; margin-bottom: 20px; }
-    .hero p { max-width: 620px; line-height: 1.85; font-size: clamp(1.02rem, 1.5vw, 1.18rem); margin-bottom: 28px; }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; }
-    .btn { border: 0; min-height: 52px; padding: 0 24px; border-radius: 999px; cursor: pointer; display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 900; transition: .24s var(--ease); }
-    .btn-primary { color: #fffaf2; background: linear-gradient(135deg, #223f2d, #3f623b); box-shadow: 0 18px 38px rgba(38, 59, 44, 0.20); }
-    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 22px 44px rgba(38, 59, 44, 0.26); }
-    .btn-soft { color: var(--ink); background: rgba(255, 250, 242, .78); border: 1px solid var(--border); }
-    .btn-soft:hover { transform: translateY(-2px); border-color: var(--border-strong); }
-
-    .hero-visual { position: relative; min-height: 540px; border-radius: var(--radius-xl); overflow: hidden; border: 1px solid var(--border); background: linear-gradient(135deg, rgba(255,250,242,.66), rgba(234,223,203,.4)); box-shadow: var(--shadow-soft); }
-    .hero-visual::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 50% 38%, rgba(255,255,255,.88), transparent 16rem), linear-gradient(135deg, rgba(183,154,89,.08), transparent); }
-    .hero-product { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); width: min(82%, 440px); height: 96%; object-fit: contain; filter: drop-shadow(0 28px 38px rgba(38, 59, 44, .14)); }
-    .hero-badge { position: absolute; right: 24px; top: 24px; z-index: 2; border: 1px solid var(--border); background: rgba(255, 250, 242, .82); color: var(--ink); border-radius: 999px; padding: 10px 14px; font-size: .72rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-
-    .section { padding: 72px 0; }
-    .section-soft { border-block: 1px solid rgba(183,154,89,.16); background: rgba(255,250,242,.42); }
-    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 28px; }
-    .section-title { max-width: 760px; }
-    .section-title h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(2.7rem, 5.8vw, 5rem); letter-spacing: -.052em; margin-bottom: 10px; }
-    .section-title p { line-height: 1.75; }
-
-    .filters { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; padding: 12px; border: 1px solid var(--border); border-radius: 28px; background: rgba(255,250,242,.78); box-shadow: 0 16px 42px rgba(38, 59, 44, .06); }
-    .search-wrap { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 220px; padding: 0 14px; color: var(--gold-deep); }
-    .search-wrap input { min-height: 44px; flex: 1; border: 0; outline: 0; background: transparent; color: var(--ink); font-weight: 700; }
-    .search-wrap input::placeholder { color: rgba(86, 100, 85, .72); }
-    .select-control { min-height: 44px; border: 1px solid var(--border); outline: 0; color: var(--ink); background: #fffaf2; border-radius: 999px; padding: 0 16px; font-weight: 800; }
-
-    .product-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
-    .product-card { position: relative; overflow: hidden; border: 1px solid var(--border); border-radius: 30px; background: var(--cream-card); box-shadow: var(--shadow-card); transition: .26s var(--ease); }
-    .product-card:hover { transform: translateY(-6px); border-color: var(--border-strong); box-shadow: 0 26px 68px rgba(38, 59, 44, .15); }
-    .product-image-wrap { position: relative; aspect-ratio: 1 / 1.05; padding: 14px; border-bottom: 1px solid rgba(183,154,89,.18); background: linear-gradient(135deg, rgba(255,250,242,.84), rgba(239,228,213,.46)); }
-    .product-image { width: 100%; height: 100%; object-fit: cover; border-radius: 24px; border: 1px solid rgba(183,154,89,.20); background: #fbf5eb; }
-    .product-badge { position: absolute; left: 24px; top: 24px; z-index: 2; min-height: 30px; padding: 0 14px; display: inline-flex; align-items: center; border-radius: 999px; color: #fffaf2; background: #314c37; font-size: .72rem; font-weight: 900; letter-spacing: .1em; text-transform: uppercase; box-shadow: 0 14px 30px rgba(38, 59, 44, .16); }
-    .product-content { padding: 22px; }
-    .product-category { color: var(--gold-deep); font-size: .76rem; font-weight: 900; letter-spacing: .18em; text-transform: uppercase; margin-bottom: 10px; }
-    .product-name { font-family: "Cormorant Garamond", serif; font-size: 2rem; letter-spacing: -.045em; margin-bottom: 10px; }
-    .product-description { line-height: 1.68; margin-bottom: 16px; }
-    .aroma-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 18px; }
-    .aroma-pills span { min-height: 28px; padding: 0 10px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,250,242,.72); display: inline-flex; align-items: center; color: var(--ink); font-size: .76rem; font-weight: 800; }
-    .card-footer { display: flex; align-items: center; justify-content: space-between; gap: 12px; border-top: 1px solid rgba(183,154,89,.18); padding-top: 16px; }
-    .price-from small { display: block; color: var(--ink-soft); font-weight: 800; font-size: .72rem; text-transform: uppercase; letter-spacing: .12em; }
-    .price-from strong { display: block; color: var(--ink); font-size: 1.35rem; }
-
-    .empty-state { grid-column: 1 / -1; padding: 44px; border: 1px dashed var(--border); border-radius: 28px; background: rgba(255,250,242,.62); text-align: center; line-height: 1.7; }
-
-    .story-grid { display: grid; grid-template-columns: 1.25fr .75fr; gap: 24px; }
-    .story-card, .quote-card, .trust-card, .cta { border: 1px solid var(--border); border-radius: var(--radius-xl); background: rgba(255,250,242,.72); box-shadow: var(--shadow-card); }
-    .story-card { padding: clamp(30px, 5vw, 58px); }
-    .story-card h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(2.6rem, 6vw, 5rem); letter-spacing: -.05em; margin-bottom: 16px; }
-    .story-card p { max-width: 720px; line-height: 1.82; font-size: 1.05rem; }
-    .quote-card { display: grid; place-items: center; padding: 34px; background: linear-gradient(135deg, rgba(255,250,242,.82), rgba(234,223,203,.54)); }
-    .quote-card p { color: var(--ink); font-family: "Cormorant Garamond", serif; font-size: clamp(2rem, 4.2vw, 3.8rem); line-height: 1.03; letter-spacing: -.045em; }
-    .trust-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .trust-card { padding: 26px; }
-    .trust-number { width: 54px; height: 54px; border-radius: 50%; display: grid; place-items: center; margin-bottom: 20px; color: #fffaf2; background: var(--gold-deep); font-weight: 900; font-size: 1.1rem; }
-    .trust-card h3 { font-size: 1.16rem; margin-bottom: 10px; }
-    .trust-card p { line-height: 1.65; }
-    .cta { margin: 72px 0 84px; padding: clamp(34px, 6vw, 64px); text-align: center; background: radial-gradient(circle at 82% 20%, rgba(183,154,89,.17), transparent 20rem), rgba(255,250,242,.74); }
-    .cta h2 { font-family: "Cormorant Garamond", serif; font-size: clamp(2.5rem, 6vw, 5rem); letter-spacing: -.05em; margin-bottom: 12px; }
-    .cta p { max-width: 660px; margin: 0 auto 24px; line-height: 1.76; }
-    .footer { text-align: center; padding: 34px 0 46px; color: var(--ink-soft); }
-
-    .floating-cart { position: fixed; right: 20px; bottom: 20px; z-index: 80; min-height: 56px; padding: 0 18px; border: 0; border-radius: 999px; color: #fffaf2; background: rgba(34, 63, 45, .96); box-shadow: 0 18px 44px rgba(38, 59, 44, .24); font-weight: 900; cursor: pointer; display: inline-flex; align-items: center; gap: 10px; }
-    .cart-count { width: 30px; height: 30px; display: inline-flex; align-items: center; justify-content: center; border-radius: 50%; background: #fffaf2; color: var(--ink); }
-    .cart-overlay, .modal-overlay { position: fixed; inset: 0; z-index: 90; background: rgba(38,59,44,.34); backdrop-filter: blur(6px); opacity: 0; pointer-events: none; transition: .22s var(--ease); }
-    .cart-overlay.is-open, .modal-overlay.is-open { opacity: 1; pointer-events: auto; }
-    .cart-panel { position: fixed; right: 18px; bottom: 88px; z-index: 100; width: min(430px, calc(100vw - 24px)); max-height: min(700px, calc(100vh - 110px)); display: none; flex-direction: column; border: 1px solid var(--border); border-radius: 30px; background: rgba(255,250,242,.96); box-shadow: 0 28px 80px rgba(38,59,44,.22); overflow: hidden; }
-    .cart-panel.is-open { display: flex; }
-    .cart-header { display: flex; justify-content: space-between; gap: 16px; align-items: center; padding: 20px; border-bottom: 1px solid rgba(183,154,89,.18); }
-    .cart-header h3 { font-family: "Cormorant Garamond", serif; font-size: 2rem; letter-spacing: -.04em; }
-    .icon-btn { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid var(--border); background: #fffaf2; color: var(--ink); border-radius: 50%; cursor: pointer; font-weight: 900; font-size: 1.25rem; }
-    .cart-items { padding: 14px 18px; overflow-y: auto; }
-    .cart-empty { padding: 26px 8px; text-align: center; line-height: 1.6; }
-    .cart-item { display: grid; grid-template-columns: 1fr auto; gap: 10px 12px; padding: 14px 0; border-bottom: 1px solid rgba(183,154,89,.18); }
-    .cart-item-title { color: var(--ink); font-weight: 900; line-height: 1.35; }
-    .cart-item-detail { margin-top: 4px; font-size: .88rem; line-height: 1.5; }
-    .cart-controls { display: flex; align-items: center; gap: 8px; }
-    .qty-btn { width: 30px; height: 30px; border: 1px solid var(--border); border-radius: 50%; background: #fffaf2; color: var(--ink); font-weight: 900; cursor: pointer; }
-    .remove-btn { grid-column: 1 / -1; justify-self: start; border: 0; background: transparent; color: var(--gold-deep); cursor: pointer; font-weight: 800; }
-    .cart-footer { padding: 18px; border-top: 1px solid rgba(183,154,89,.18); background: rgba(255,255,255,.35); }
-    .cart-total { display: flex; justify-content: space-between; align-items: center; color: var(--ink); font-weight: 900; margin-bottom: 12px; }
-    .cart-actions { display: grid; gap: 10px; }
-
-    .product-modal { position: fixed; inset: 18px; z-index: 110; display: none; border: 1px solid var(--border); border-radius: 34px; background: rgba(255,250,242,.98); box-shadow: 0 28px 90px rgba(38,59,44,.28); overflow: hidden; }
-    .product-modal.is-open { display: grid; grid-template-columns: minmax(0, .86fr) minmax(360px, 1fr); }
-    .modal-image-wrap { min-height: 100%; background: linear-gradient(135deg, rgba(255,250,242,.84), rgba(239,228,213,.62)); }
-    .modal-image { width: 100%; height: 100%; min-height: 620px; object-fit: cover; }
-    .modal-content { position: relative; overflow-y: auto; padding: clamp(26px, 5vw, 58px); }
-    .modal-close { position: absolute; right: 20px; top: 20px; }
-    .modal-title { font-family: "Cormorant Garamond", serif; font-size: clamp(2.7rem, 6vw, 5rem); letter-spacing: -.055em; margin-bottom: 14px; }
-    .modal-copy { line-height: 1.75; font-size: 1.04rem; margin-bottom: 22px; }
-    .benefit-pills { display: flex; flex-wrap: wrap; gap: 10px; margin-bottom: 24px; }
-    .benefit-pills span { min-height: 34px; padding: 0 13px; border-radius: 999px; border: 1px solid var(--border); background: #fffaf2; color: var(--ink); font-weight: 800; font-size: .82rem; }
-    .modal-form { display: grid; gap: 16px; }
-    .field label { display: block; margin-bottom: 8px; color: var(--ink); font-size: .78rem; font-weight: 900; letter-spacing: .13em; text-transform: uppercase; }
-    .field select, .field input { width: 100%; min-height: 58px; border: 1px solid var(--border); border-radius: 18px; background: #fffaf2; color: var(--ink); padding: 0 16px; font-weight: 800; outline: none; }
-    .subtotal-box { display: flex; align-items: center; justify-content: space-between; gap: 18px; margin-top: 6px; padding: 18px; border: 1px solid var(--border); border-radius: 22px; background: rgba(255,255,255,.48); }
-    .subtotal-box span { display: block; color: var(--ink-soft); font-size: .78rem; font-weight: 900; letter-spacing: .12em; text-transform: uppercase; }
-    .subtotal-box strong { color: var(--ink); font-size: 1.8rem; }
-    .toast { position: fixed; left: 50%; bottom: 90px; z-index: 130; transform: translateX(-50%) translateY(16px); opacity: 0; pointer-events: none; padding: 13px 18px; border-radius: 999px; color: #fffaf2; background: #223f2d; box-shadow: 0 18px 36px rgba(38,59,44,.22); font-weight: 900; transition: .22s var(--ease); }
-    .toast.is-visible { opacity: 1; transform: translateX(-50%) translateY(0); }
-    .sheet-note { display: none; margin-bottom: 18px; padding: 12px 16px; border-radius: 18px; border: 1px solid var(--border); background: rgba(255,250,242,.82); font-size: .9rem; line-height: 1.5; }
-    body.admin-mode .sheet-note { display: block; }
-
-    @media (max-width: 980px) {
-      .hero, .story-grid, .product-modal.is-open { grid-template-columns: 1fr; }
-      .hero-visual { min-height: 480px; }
-      .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-      .trust-grid { grid-template-columns: repeat(2, 1fr); }
-      .modal-image { min-height: 420px; }
+    .brand-copy {
+      display: grid;
+      line-height: 1;
     }
-    @media (max-width: 680px) {
-      .topbar { border-radius: 28px; }
-      .nav { flex-direction: column; border-radius: 28px; align-items: stretch; }
-      .brand { justify-content: center; }
-      .nav-links { justify-content: center; flex-wrap: wrap; }
-      .nav-links li:last-child { width: 100%; display: flex; }
-      .nav-links li:last-child a { width: 100%; }
-      .hero { padding-top: 52px; }
-      .filters { flex-direction: column; align-items: stretch; }
-      .search-wrap { width: 100%; min-width: 0; }
-      .select-control { width: 100%; }
-      .product-grid, .trust-grid { grid-template-columns: 1fr; }
-      .section { padding: 54px 0; }
-      .product-modal { inset: 0; border-radius: 0; }
-      .modal-content { padding: 28px 18px 96px; }
-      .floating-cart { right: 12px; left: 12px; bottom: 12px; justify-content: center; }
-      .cart-panel { right: 10px; bottom: 78px; width: calc(100vw - 20px); max-height: calc(100vh - 96px); }
+
+    .brand-name {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.65rem, 3vw, 2.4rem);
+      font-weight: 700;
+      letter-spacing: -0.04em;
+    }
+
+    .brand-subtitle {
+      margin-top: 3px;
+      color: var(--gold-deep);
+      font-size: 0.64rem;
+      font-weight: 800;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0 14px;
+      border-radius: 999px;
+      color: var(--ink);
+      font-size: 0.88rem;
+      font-weight: 800;
+      transition: transform .22s var(--ease), background .22s var(--ease), color .22s var(--ease);
+    }
+
+    .nav-links a:hover {
+      transform: translateY(-1px);
+      background: rgba(183,154,89,.11);
+    }
+
+    .nav-links .nav-cta {
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, var(--ink), #43593f);
+      box-shadow: 0 16px 34px rgba(38, 59, 44, 0.18);
+    }
+
+    .nav-links .nav-cta:hover {
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, #43593f, var(--ink));
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(360px, .9fr);
+      align-items: center;
+      gap: clamp(28px, 5vw, 58px);
+      padding: clamp(64px, 8vw, 104px) 0 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 18px;
+      color: var(--gold-deep);
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 48px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), var(--gold-deep));
+    }
+
+    h1, h2, h3 {
+      color: var(--ink);
+      line-height: .98;
+    }
+
+    h1, h2 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-weight: 700;
+      letter-spacing: -0.045em;
+    }
+
+    h1 {
+      max-width: 780px;
+      font-size: clamp(4rem, 9.2vw, 8.2rem);
+      margin-bottom: 24px;
+    }
+
+    .hero .highlight {
+      color: var(--gold-deep);
+      position: relative;
+      display: inline-block;
+    }
+
+    .hero .highlight::after {
+      content: "";
+      position: absolute;
+      left: 0.05em;
+      right: 0.02em;
+      bottom: 0.06em;
+      height: 0.12em;
+      background: rgba(183,154,89,.22);
+      z-index: -1;
+      border-radius: 999px;
+    }
+
+    .hero-text {
+      max-width: 660px;
+      margin-bottom: 30px;
+      color: var(--ink-soft);
+      font-size: clamp(1rem, 1.5vw, 1.18rem);
+      line-height: 1.82;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      align-items: center;
+      margin-bottom: 28px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      min-height: 52px;
+      padding: 0 22px;
+      border: 1px solid transparent;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 900;
+      letter-spacing: -0.01em;
+      transition: transform .22s var(--ease), box-shadow .22s var(--ease), background .22s var(--ease), border-color .22s var(--ease);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, var(--ink), #496040);
+      box-shadow: 0 18px 38px rgba(38, 59, 44, 0.20);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 48px rgba(38, 59, 44, 0.26);
+    }
+
+    .btn-secondary {
+      color: var(--ink);
+      background: rgba(255,255,255,.52);
+      border-color: var(--border);
+    }
+
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+      border-color: var(--border-strong);
+      background: rgba(255, 250, 242, 0.82);
+    }
+
+    .quiet-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      color: var(--gold-deep);
+      font-weight: 900;
+    }
+
+    .proof-row {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      max-width: 650px;
+    }
+
+    .proof {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 15px 16px;
+      background: rgba(255, 250, 242, 0.58);
+      box-shadow: 0 12px 36px rgba(38, 59, 44, 0.06);
+    }
+
+    .proof strong {
+      display: block;
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.62rem;
+      line-height: 1;
+    }
+
+    .proof span {
+      display: block;
+      margin-top: 6px;
+      color: var(--ink-soft);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero-visual {
+      position: relative;
+      min-height: 620px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 50% 28%, rgba(255,255,255,.68), transparent 17rem),
+        linear-gradient(145deg, rgba(255,250,242,.78), rgba(233,222,206,.52));
+      box-shadow: var(--shadow-soft);
+      isolation: isolate;
+    }
+
+    .hero-visual::before {
+      content: "CUTE & CLEAN";
+      position: absolute;
+      left: 50%;
+      top: 34px;
+      transform: translateX(-50%);
+      color: rgba(38,59,44,.06);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(4.3rem, 7vw, 7rem);
+      font-weight: 700;
+      letter-spacing: .03em;
+      white-space: nowrap;
+      z-index: -1;
+    }
+
+    .hero-frame {
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(183,154,89,.23);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .hero-product {
+      position: absolute;
+      left: 50%;
+      top: 54%;
+      width: min(80%, 410px);
+      transform: translate(-50%, -50%);
+      border-radius: 30px;
+      box-shadow: 0 32px 70px rgba(38,59,44,.16);
+      object-fit: cover;
+      aspect-ratio: 1122 / 1402;
+      transition: opacity .55s var(--ease), transform .55s var(--ease);
+    }
+
+    .hero-badge {
+      position: absolute;
+      left: 28px;
+      top: 28px;
+      width: 132px;
+      height: 132px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      box-shadow: 0 18px 46px rgba(143,111,46,.24);
+      text-align: center;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.28rem;
+      font-weight: 700;
+      line-height: 1.05;
+    }
+
+    .hero-card {
+      position: absolute;
+      right: 28px;
+      bottom: 28px;
+      width: min(72%, 315px);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+      background: rgba(255,250,242,.78);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 24px 58px rgba(38,59,44,.14);
+    }
+
+    .hero-card span {
+      color: var(--gold-deep);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+    }
+
+    .hero-card h3 {
+      margin-top: 8px;
+      font-size: 1.3rem;
+      line-height: 1.15;
+    }
+
+    .hero-card p {
+      margin-top: 10px;
+      line-height: 1.56;
+      font-size: .92rem;
+    }
+
+    .section {
+      padding: 74px 0;
+    }
+
+    .section-soft {
+      border-block: 1px solid var(--border);
+      background: rgba(255, 250, 242, 0.48);
+    }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 28px;
+      margin-bottom: 30px;
+    }
+
+    .section-title {
+      max-width: 740px;
+    }
+
+    .section-title h2 {
+      margin-bottom: 12px;
+      font-size: clamp(2.7rem, 6vw, 5.3rem);
+    }
+
+    .section-title p {
+      max-width: 680px;
+      color: var(--ink-soft);
+      line-height: 1.76;
+      font-size: 1rem;
+    }
+
+    .mini-panel {
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 20px;
+      background: rgba(255,250,242,.68);
+      box-shadow: var(--shadow-card);
+      min-width: 310px;
+    }
+
+    .mini-panel strong {
+      display: block;
+      color: var(--ink);
+      font-size: 1rem;
+      margin-bottom: 6px;
+    }
+
+    .mini-panel p {
+      line-height: 1.55;
+      font-size: .9rem;
+    }
+
+    .assistant-box {
+      display: grid;
+      grid-template-columns: minmax(0, .92fr) minmax(320px, .7fr);
+      gap: 22px;
+      align-items: stretch;
+      margin-bottom: 34px;
+    }
+
+    .assistant-card, .recommendation-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255,250,242,.82), rgba(239,228,213,.58));
+      box-shadow: var(--shadow-card);
+      padding: clamp(22px, 3vw, 32px);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .assistant-card::after {
+      content: "";
+      position: absolute;
+      right: -70px;
+      top: -70px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(183,154,89,.11);
+      pointer-events: none;
+    }
+
+    .assistant-card h3,
+    .recommendation-card h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(1.8rem, 3vw, 2.4rem);
+      letter-spacing: -0.03em;
+      margin-bottom: 10px;
+    }
+
+    .assistant-card p,
+    .recommendation-card p {
+      line-height: 1.68;
+    }
+
+    .choice-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .choice-btn {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 16px;
+      min-height: 112px;
+      background: rgba(255,255,255,.52);
+      color: var(--ink);
+      text-align: left;
+      cursor: pointer;
+      transition: transform .22s var(--ease), border-color .22s var(--ease), background .22s var(--ease);
+    }
+
+    .choice-btn:hover,
+    .choice-btn.is-active {
+      transform: translateY(-3px);
+      border-color: var(--border-strong);
+      background: rgba(255,250,242,.95);
+    }
+
+    .choice-btn small {
+      display: block;
+      color: var(--gold-deep);
+      font-weight: 900;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .choice-btn span {
+      display: block;
+      margin-top: 8px;
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .recommendation-list {
+      display: grid;
+      gap: 10px;
+      margin: 18px 0;
+      list-style: none;
+    }
+
+    .recommendation-list li {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 13px;
+      border: 1px solid rgba(183,154,89,.2);
+      border-radius: 16px;
+      background: rgba(255,255,255,.42);
+      color: var(--ink);
+      font-weight: 800;
+    }
+
+    .recommendation-list em {
+      color: var(--gold-deep);
+      font-style: normal;
+      font-weight: 900;
+    }
+
+    .filters {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto auto;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 24px;
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,250,242,.72);
+      box-shadow: 0 16px 44px rgba(38,59,44,.07);
+    }
+
+    .search-wrap {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      min-width: 180px;
+      padding: 0 12px;
+      color: var(--gold-deep);
+    }
+
+    .search-wrap input {
+      width: 100%;
+      min-height: 42px;
+      border: 0;
+      outline: 0;
+      background: transparent;
+      color: var(--ink);
+      font-weight: 600;
+    }
+
+    .search-wrap input::placeholder {
+      color: rgba(86,100,85,.74);
+    }
+
+    .select-control {
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0 14px;
+      background: rgba(255,255,255,.54);
+      color: var(--ink);
+      font-weight: 900;
+      cursor: pointer;
+      outline: 0;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 22px;
+    }
+
+    .product-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      min-height: 100%;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--cream-card);
+      box-shadow: var(--shadow-card);
+      transition: transform .24s var(--ease), box-shadow .24s var(--ease), border-color .24s var(--ease);
+    }
+
+    .product-card:hover {
+      transform: translateY(-7px);
+      border-color: var(--border-strong);
+      box-shadow: 0 32px 70px rgba(38,59,44,.15);
+    }
+
+    .product-image-wrap {
+      position: relative;
+      padding: 12px 12px 0;
+      background:
+        radial-gradient(circle at 50% 22%, rgba(255,255,255,.7), transparent 12rem),
+        linear-gradient(180deg, rgba(234,223,203,.38), rgba(255,250,242,.36));
+    }
+
+    .product-image {
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      border-radius: 22px;
+      border: 1px solid rgba(183,154,89,.20);
+      background: var(--ivory);
+    }
+
+    .product-badge {
+      position: absolute;
+      left: 24px;
+      top: 24px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 30px;
+      padding: 0 11px;
+      border-radius: 999px;
+      color: var(--ivory-2);
+      background: rgba(38,59,44,.9);
+      box-shadow: 0 12px 30px rgba(38,59,44,.18);
+      font-size: .68rem;
+      font-weight: 900;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      backdrop-filter: blur(12px);
+    }
+
+    .product-content {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      padding: 20px;
+    }
+
+    .product-category {
+      color: var(--gold-deep);
+      font-size: .72rem;
+      font-weight: 900;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .product-title {
+      color: var(--ink);
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 1.74rem;
+      letter-spacing: -0.035em;
+      line-height: 1;
+      margin-bottom: 10px;
+    }
+
+    .product-copy {
+      color: var(--ink-soft);
+      font-size: .93rem;
+      line-height: 1.64;
+      margin-bottom: 14px;
+    }
+
+    .benefits {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin: 3px 0 18px;
+    }
+
+    .benefits span {
+      min-height: 28px;
+      display: inline-flex;
+      align-items: center;
+      border: 1px solid rgba(183,154,89,.22);
+      border-radius: 999px;
+      padding: 0 10px;
+      background: rgba(255,255,255,.42);
+      color: var(--ink);
+      font-size: .74rem;
+      font-weight: 800;
+    }
+
+    .card-footer {
+      display: grid;
+      gap: 14px;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid rgba(183,154,89,.18);
+    }
+
+    .price-row {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 14px;
+    }
+
+    .price-box span {
+      display: block;
+      color: var(--ink-soft);
+      font-size: .74rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .09em;
+    }
+
+    .price-box strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--ink);
+      font-size: 1.45rem;
+      line-height: 1;
+    }
+
+    .aroma-pill {
+      color: var(--gold-deep);
+      font-size: .84rem;
+      font-weight: 900;
+      text-align: right;
+    }
+
+    .empty-state {
+      grid-column: 1 / -1;
+      border: 1px dashed var(--border-strong);
+      border-radius: 24px;
+      padding: 44px;
+      background: rgba(255,250,242,.62);
+      text-align: center;
+      color: var(--ink-soft);
+      line-height: 1.7;
+    }
+
+    .story-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, .78fr);
+      gap: 24px;
+      align-items: stretch;
+    }
+
+    .story-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background:
+        linear-gradient(145deg, rgba(255,250,242,.86), rgba(234,223,203,.52));
+      box-shadow: var(--shadow-card);
+      padding: clamp(26px, 4vw, 44px);
+      overflow: hidden;
+    }
+
+    .story-card h2 {
+      font-size: clamp(2.7rem, 5vw, 5rem);
+      margin-bottom: 16px;
+    }
+
+    .story-card p {
+      line-height: 1.84;
+      max-width: 720px;
+    }
+
+    .quote-card {
+      display: flex;
+      min-height: 100%;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      padding: 34px;
+      background:
+        radial-gradient(circle at top, rgba(183,154,89,.16), transparent 18rem),
+        rgba(38,59,44,.96);
+      box-shadow: var(--shadow-soft);
+      color: var(--ivory-2);
+    }
+
+    .quote-card p {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2rem, 4vw, 3.55rem);
+      line-height: .98;
+      letter-spacing: -0.04em;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .trust-card {
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      background: rgba(255,250,242,.7);
+      box-shadow: var(--shadow-card);
+    }
+
+    .trust-number {
+      width: 46px;
+      height: 46px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 18px;
+      border-radius: 50%;
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, var(--gold-deep), var(--gold));
+      font-weight: 900;
+      box-shadow: 0 14px 30px rgba(143,111,46,.18);
+    }
+
+    .trust-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 10px;
+    }
+
+    .trust-card p {
+      font-size: .92rem;
+      line-height: 1.68;
+    }
+
+    .cta {
+      position: relative;
+      margin: 78px 0 88px;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(38,59,44,.96), rgba(62,82,57,.96)),
+        var(--ink);
+      box-shadow: var(--shadow-soft);
+      color: var(--ivory-2);
+      padding: clamp(34px, 6vw, 70px);
+      text-align: center;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      inset: 20px;
+      border: 1px solid rgba(234,223,203,.24);
+      border-radius: 28px;
+      pointer-events: none;
+    }
+
+    .cta .eyebrow {
+      color: var(--champagne);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta .eyebrow::before {
+      background: linear-gradient(90deg, transparent, var(--champagne));
+    }
+
+    .cta h2 {
+      max-width: 850px;
+      margin: 0 auto 14px;
+      color: var(--ivory-2);
+      font-size: clamp(2.6rem, 6vw, 5.5rem);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta p {
+      max-width: 680px;
+      margin: 0 auto 26px;
+      line-height: 1.76;
+      color: rgba(255,250,242,.82);
+      position: relative;
+      z-index: 1;
+    }
+
+    .cta .btn {
+      position: relative;
+      z-index: 1;
+    }
+
+    .btn-gold {
+      color: var(--ink);
+      background: linear-gradient(135deg, #d8c48f, var(--gold));
+      box-shadow: 0 18px 38px rgba(183,154,89,.22);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 24px 50px rgba(183,154,89,.3);
+    }
+
+    .footer {
+      padding: 34px 0 48px;
+      color: var(--ink-soft);
+      text-align: center;
+      font-size: .92rem;
+    }
+
+    .floating-cart {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 100;
+      min-height: 56px;
+      padding: 0 18px;
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, var(--ink), #43593f);
+      border: 1px solid rgba(255,250,242,.24);
+      border-radius: 999px;
+      box-shadow: 0 22px 50px rgba(38,59,44,.26);
+      font-weight: 900;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .cart-count {
+      min-width: 28px;
+      height: 28px;
+      padding: 0 8px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 999px;
+      background: rgba(255,250,242,.94);
+      color: var(--ink);
+      font-size: .82rem;
+    }
+
+    .overlay {
+      position: fixed;
+      inset: 0;
+      z-index: 120;
+      display: none;
+      background: rgba(28,40,32,.38);
+      backdrop-filter: blur(6px);
+    }
+
+    .overlay.is-open {
+      display: block;
+    }
+
+    .drawer {
+      position: fixed;
+      z-index: 130;
+      right: 16px;
+      top: 16px;
+      bottom: 16px;
+      width: min(480px, calc(100vw - 32px));
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      background: rgba(255,250,242,.96);
+      box-shadow: 0 32px 90px rgba(28,40,32,.25);
+    }
+
+    .drawer.is-open {
+      display: flex;
+    }
+
+    .drawer-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 22px 22px 16px;
+      border-bottom: 1px solid rgba(183,154,89,.18);
+    }
+
+    .drawer-header h3 {
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 2.1rem;
+      letter-spacing: -.04em;
+    }
+
+    .icon-button {
+      width: 42px;
+      height: 42px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: rgba(255,255,255,.6);
+      color: var(--ink);
+      cursor: pointer;
+      font-size: 1.4rem;
+      line-height: 1;
+    }
+
+    .drawer-body {
+      overflow-y: auto;
+      padding: 16px 22px;
+    }
+
+    .cart-empty {
+      padding: 28px 8px;
+      color: var(--ink-soft);
+      line-height: 1.7;
+      text-align: center;
+    }
+
+    .cart-item {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 12px;
+      padding: 16px 0;
+      border-bottom: 1px solid rgba(183,154,89,.16);
+    }
+
+    .cart-title {
+      color: var(--ink);
+      font-weight: 900;
+      line-height: 1.25;
+    }
+
+    .cart-detail {
+      margin-top: 4px;
+      color: var(--ink-soft);
+      font-size: .87rem;
+      line-height: 1.4;
+    }
+
+    .cart-price {
+      margin-top: 7px;
+      color: var(--gold-deep);
+      font-weight: 900;
+    }
+
+    .qty-control {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .qty-control button {
+      width: 32px;
+      height: 32px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: rgba(255,255,255,.66);
+      color: var(--ink);
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .cart-remove {
+      grid-column: 1 / -1;
+      justify-self: start;
+      border: 0;
+      background: transparent;
+      color: var(--ink-soft);
+      cursor: pointer;
+      font-size: .84rem;
+      font-weight: 800;
+    }
+
+    .checkout-fields {
+      display: grid;
+      gap: 10px;
+      margin-top: 18px;
+      padding: 16px;
+      border: 1px solid rgba(183,154,89,.18);
+      border-radius: 20px;
+      background: rgba(255,255,255,.42);
+    }
+
+    .checkout-fields label {
+      display: grid;
+      gap: 6px;
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 900;
+    }
+
+    .checkout-fields input,
+    .checkout-fields textarea {
+      width: 100%;
+      min-height: 42px;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px 12px;
+      background: rgba(255,250,242,.8);
+      color: var(--ink);
+      outline: 0;
+    }
+
+    .checkout-fields textarea {
+      min-height: 76px;
+      resize: vertical;
+    }
+
+    .drawer-footer {
+      padding: 16px 22px 22px;
+      border-top: 1px solid rgba(183,154,89,.18);
+      background: rgba(255,255,255,.38);
+    }
+
+    .cart-total {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      color: var(--ink);
+      font-weight: 900;
+      margin-bottom: 14px;
+    }
+
+    .cart-total strong {
+      font-size: 1.4rem;
+    }
+
+    .drawer-actions {
+      display: grid;
+      gap: 10px;
+    }
+
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 160;
+      display: none;
+      place-items: center;
+      padding: 18px;
+      background: rgba(28,40,32,.44);
+      backdrop-filter: blur(7px);
+    }
+
+    .modal.is-open {
+      display: grid;
+    }
+
+    .modal-card {
+      width: min(980px, 100%);
+      max-height: min(760px, calc(100vh - 36px));
+      display: grid;
+      grid-template-columns: minmax(280px, .82fr) minmax(0, 1fr);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-xl);
+      background: rgba(255,250,242,.98);
+      box-shadow: 0 36px 100px rgba(28,40,32,.28);
+    }
+
+    .modal-media {
+      position: relative;
+      background:
+        radial-gradient(circle at 50% 18%, rgba(255,255,255,.8), transparent 14rem),
+        linear-gradient(180deg, rgba(234,223,203,.7), rgba(255,250,242,.76));
+      padding: 16px;
+    }
+
+    .modal-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 480px;
+      object-fit: cover;
+      border-radius: 24px;
+      border: 1px solid rgba(183,154,89,.2);
+    }
+
+    .modal-content {
+      position: relative;
+      overflow-y: auto;
+      padding: clamp(24px, 4vw, 42px);
+    }
+
+    .modal-close {
+      position: absolute;
+      right: 18px;
+      top: 18px;
+    }
+
+    .modal-title {
+      padding-right: 54px;
+      margin-bottom: 12px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(2.2rem, 4vw, 3.6rem);
+      letter-spacing: -0.045em;
+      line-height: .96;
+      color: var(--ink);
+    }
+
+    .modal-copy {
+      line-height: 1.72;
+      margin-bottom: 20px;
+    }
+
+    .option-form {
+      display: grid;
+      gap: 14px;
+    }
+
+    .option-form label {
+      display: grid;
+      gap: 7px;
+      color: var(--ink);
+      font-size: .82rem;
+      font-weight: 900;
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .option-form select,
+    .option-form input {
+      min-height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 0 13px;
+      background: rgba(255,255,255,.58);
+      color: var(--ink);
+      outline: 0;
+      font-weight: 700;
+      text-transform: none;
+      letter-spacing: 0;
+    }
+
+    .modal-summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin: 18px 0;
+      padding: 16px;
+      border: 1px solid rgba(183,154,89,.2);
+      border-radius: 20px;
+      background: rgba(255,255,255,.46);
+    }
+
+    .modal-summary small {
+      display: block;
+      color: var(--ink-soft);
+      font-weight: 800;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .modal-summary strong {
+      display: block;
+      margin-top: 3px;
+      color: var(--ink);
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .toast {
+      position: fixed;
+      left: 50%;
+      bottom: 88px;
+      z-index: 190;
+      transform: translateX(-50%) translateY(18px);
+      opacity: 0;
+      pointer-events: none;
+      border: 1px solid rgba(255,250,242,.22);
+      border-radius: 999px;
+      padding: 12px 16px;
+      color: var(--ivory-2);
+      background: linear-gradient(135deg, var(--ink), #43593f);
+      box-shadow: 0 18px 42px rgba(38,59,44,.26);
+      font-weight: 900;
+      transition: opacity .22s var(--ease), transform .22s var(--ease);
+    }
+
+    .toast.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media (max-width: 1040px) {
+      .hero,
+      .assistant-box,
+      .story-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-visual {
+        min-height: 590px;
+      }
+
+      .product-grid,
+      .trust-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .choice-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .section-head {
+        align-items: stretch;
+        flex-direction: column;
+      }
+
+      .mini-panel {
+        min-width: 0;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .topbar {
+        border-radius: 28px;
+      }
+
+      .nav {
+        flex-direction: column;
+        padding: 14px;
+      }
+
+      .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .nav-links li:last-child {
+        width: 100%;
+      }
+
+      .nav-links li:last-child a {
+        width: 100%;
+      }
+
+      .hero {
+        padding-top: 52px;
+      }
+
+      .hero-text,
+      .hero-actions {
+        text-align: left;
+      }
+
+      .proof-row,
+      .product-grid,
+      .trust-grid,
+      .choice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .filters {
+        grid-template-columns: 1fr;
+        border-radius: 26px;
+      }
+
+      .select-control {
+        width: 100%;
+      }
+
+      .modal-card {
+        grid-template-columns: 1fr;
+      }
+
+      .modal-media {
+        display: none;
+      }
+
+      .hero-visual {
+        min-height: 500px;
+      }
+
+      .hero-product {
+        width: min(78%, 350px);
+      }
+
+      .hero-badge {
+        width: 110px;
+        height: 110px;
+        font-size: 1.05rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .page-shell {
+        width: min(100% - 24px, 1180px);
+      }
+
+      h1 {
+        font-size: clamp(3.6rem, 17vw, 5rem);
+      }
+
+      .hero-visual {
+        min-height: 470px;
+      }
+
+      .hero-card {
+        left: 18px;
+        right: 18px;
+        width: auto;
+      }
+
+      .hero-badge {
+        left: 18px;
+        top: 18px;
+      }
+
+      .section {
+        padding: 58px 0;
+      }
+
+      .drawer {
+        inset: auto 10px 78px 10px;
+        width: auto;
+        max-height: calc(100vh - 96px);
+      }
+
+      .floating-cart {
+        left: 12px;
+        right: 12px;
+        justify-content: center;
+      }
+
+      .toast {
+        width: calc(100% - 24px);
+        text-align: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
+        animation: none !important;
+      }
     }
   </style>
 </head>
+
 <body>
   <header class="topbar page-shell">
     <nav class="nav" aria-label="Navegación principal">
       <a class="brand" href="#inicio" aria-label="Cute & Clean inicio">
-        <span class="brand-mark">C</span>
-        <span class="brand-text"><strong>Cute &amp; Clean</strong><small>Home Care Boutique</small></span>
+        <span class="brand-mark" aria-hidden="true">C</span>
+        <span class="brand-copy">
+          <span class="brand-name">Cute &amp; Clean</span>
+          <span class="brand-subtitle">Home care boutique</span>
+        </span>
       </a>
+
       <ul class="nav-links">
-        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#productos">Catálogo</a></li>
+        <li><a href="#asistente">Asistente</a></li>
         <li><a href="#confianza">Confianza</a></li>
-        <li><a class="nav-whatsapp" id="navWhatsApp" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a></li>
+        <li><a class="nav-cta" id="navWhatsapp" href="#" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a></li>
       </ul>
     </nav>
   </header>
@@ -226,32 +1554,110 @@
   <main id="inicio">
     <section class="hero page-shell">
       <div>
-        <span class="eyebrow">Orden, aseo y frescura</span>
-        <h1>Limpieza que se siente desde el primer aroma.</h1>
-        <p>Cute &amp; Clean reúne detergentes, suavizantes, desinfectantes y jabones líquidos en un catálogo claro, visual y fácil de pedir.</p>
+        <span class="eyebrow">Limpieza premium</span>
+        <h1>Una casa que huele a <span class="highlight">dinero</span>.</h1>
+        <p class="hero-text">
+          Cute &amp; Clean convierte lo cotidiano en un ritual elegante: ropa suave, superficies frescas y manos delicadamente limpias, con aromas que se sienten exclusivos desde el primer uso.
+        </p>
+
         <div class="hero-actions">
-          <a class="btn btn-primary" href="#catalogo">Ver catálogo</a>
-          <button class="btn btn-soft" type="button" data-open-cart>Ver pedido</button>
+          <a class="btn btn-primary" href="#productos">Ver productos</a>
+          <button class="btn btn-secondary" type="button" data-open-cart>Armar pedido</button>
+          <a class="quiet-link" href="#asistente">No sé qué elegir →</a>
+        </div>
+
+        <div class="proof-row" aria-label="Resumen de beneficios">
+          <div class="proof">
+            <strong>4</strong>
+            <span>Líneas de limpieza</span>
+          </div>
+          <div class="proof">
+            <strong>6+</strong>
+            <span>Aromas premium</span>
+          </div>
+          <div class="proof">
+            <strong>1</strong>
+            <span>Pedido por WhatsApp</span>
+          </div>
         </div>
       </div>
+
       <aside class="hero-visual" aria-label="Producto destacado Cute & Clean">
-        <div class="hero-badge">Aseo diario</div>
-        <img class="hero-product" id="heroProduct" src="./assets/CC-001-LAVANDA.png" alt="Cute & Clean" />
+        <div class="hero-frame" aria-hidden="true"></div>
+        <div class="hero-badge">Edición<br />premium</div>
+        <img class="hero-product" id="heroProduct" src="./cute_clean_luxury_site/assets/detergente-lavanda.webp" alt="Producto Cute & Clean destacado" />
+        <article class="hero-card">
+          <span id="heroTag">Lavanda que relaja y limpia</span>
+          <h3 id="heroTitle">Detergente líquido Lavanda</h3>
+          <p id="heroCopy">Máxima limpieza con aroma delicado. Ideal para prendas que quieres sentir frescas, suaves y con presencia.</p>
+        </article>
       </aside>
     </section>
 
-    <section class="section section-soft" id="catalogo">
+    <section class="section section-soft" id="asistente">
+      <div class="page-shell">
+        <div class="section-head">
+          <div class="section-title">
+            <span class="eyebrow">Asistente interactivo</span>
+            <h2>Elige por sensación, no por duda.</h2>
+            <p>
+              Responde con un clic y te sugerimos un pack listo para agregar al pedido.
+            </p>
+          </div>
+          <div class="mini-panel">
+            <strong>Tip de venta elegante</strong>
+            <p>El cliente no compra detergente: compra una casa que se siente limpia, fresca y de buen gusto.</p>
+          </div>
+        </div>
+
+        <div class="assistant-box">
+          <article class="assistant-card">
+            <h3>¿Qué quieres lograr hoy?</h3>
+            <p>Selecciona una intención y la página te recomienda productos con una lógica premium.</p>
+
+            <div class="choice-grid" role="list" aria-label="Opciones de recomendación">
+              <button class="choice-btn is-active" type="button" data-kit="ropa">
+                <small>Textiles</small>
+                <span>Ropa que huela costosa</span>
+              </button>
+              <button class="choice-btn" type="button" data-kit="casa">
+                <small>Hogar</small>
+                <span>Casa fresca y protegida</span>
+              </button>
+              <button class="choice-btn" type="button" data-kit="manos">
+                <small>Cuidado</small>
+                <span>Manos suaves y limpias</span>
+              </button>
+              <button class="choice-btn" type="button" data-kit="completo">
+                <small>Full ritual</small>
+                <span>Todo el hogar impecable</span>
+              </button>
+            </div>
+          </article>
+
+          <article class="recommendation-card">
+            <h3 id="kitTitle">Pack ropa de lujo</h3>
+            <p id="kitText">Una combinación para prendas limpias, suaves y con aroma elegante.</p>
+            <ul class="recommendation-list" id="kitList"></ul>
+            <button class="btn btn-primary" type="button" id="addKitButton">Agregar pack sugerido</button>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="productos">
       <div class="page-shell">
         <div class="section-head">
           <div class="section-title">
             <span class="eyebrow">Catálogo</span>
-            <h2>Productos organizados para elegir sin confusión.</h2>
+            <h2>Productos que se ven y se sienten premium.</h2>
+            <p>
+              Filtra por línea, busca por aroma o abre cada producto para escoger presentación, cantidad y enviarlo todo por WhatsApp.
+            </p>
           </div>
         </div>
 
-        <div class="sheet-note" id="sheetStatus">Conectando con Google Sheets...</div>
-
-        <div class="filters" aria-label="Filtros de productos">
+        <div class="filters" aria-label="Filtros del catálogo">
           <label class="search-wrap" for="searchInput">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
               <path d="M10.8 18.6a7.8 7.8 0 1 1 0-15.6 7.8 7.8 0 0 1 0 15.6Z" stroke="currentColor" stroke-width="2" />
@@ -259,11 +1665,19 @@
             </svg>
             <input id="searchInput" type="search" placeholder="Buscar por producto, aroma o beneficio..." autocomplete="off" />
           </label>
+
           <select class="select-control" id="categorySelect" aria-label="Filtrar por categoría">
             <option value="Todos">Todas las líneas</option>
             <option value="Textiles">Textiles</option>
             <option value="Superficies">Superficies</option>
             <option value="Manos">Manos</option>
+          </select>
+
+          <select class="select-control" id="sortSelect" aria-label="Ordenar productos">
+            <option value="premium">Orden premium</option>
+            <option value="priceAsc">Menor precio</option>
+            <option value="priceDesc">Mayor precio</option>
+            <option value="name">A-Z</option>
           </select>
         </div>
 
@@ -271,15 +1685,20 @@
       </div>
     </section>
 
-    <section class="section" id="marca">
+    <section class="section section-soft" id="marca">
       <div class="page-shell">
         <div class="story-grid">
           <article class="story-card">
-            <span class="eyebrow">Sensación de marca</span>
-            <h2>La limpieza también comunica cuidado.</h2>
-            <p>Un hogar limpio se nota en los detalles: ropa fresca, superficies cuidadas, manos limpias y aromas que acompañan la rutina diaria con orden y bienestar.</p>
+            <span class="eyebrow">Brand feeling</span>
+            <h2>El lujo también vive en lo limpio.</h2>
+            <p>
+              Esta página está pensada para vender sin saturar: mucho aire visual, tonos champagne, verde profundo, acentos dorados y fotografías protagonistas. La sensación es boutique, cercana y aspiracional: perfecta para un catálogo que quiere verse más costoso sin perder claridad.
+            </p>
           </article>
-          <aside class="quote-card"><p>“Un espacio limpio se siente más ligero.”</p></aside>
+
+          <aside class="quote-card">
+            <p>“El aroma correcto hace que una casa parezca más cara.”</p>
+          </aside>
         </div>
       </div>
     </section>
@@ -289,14 +1708,34 @@
         <div class="section-head">
           <div class="section-title">
             <span class="eyebrow">Confianza</span>
-            <h2>Compra simple, pedido claro.</h2>
+            <h2>Compra simple, sensación exclusiva.</h2>
+            <p>
+              Cada interacción guía al usuario: descubrir, elegir, agregar al carrito y enviar un pedido claro por WhatsApp.
+            </p>
           </div>
         </div>
+
         <div class="trust-grid">
-          <article class="trust-card"><span class="trust-number">01</span><h3>Pedido ordenado</h3><p>El carrito arma un mensaje completo con producto, aroma, presentación, cantidad y total aproximado.</p></article>
-          <article class="trust-card"><span class="trust-number">02</span><h3>Aromas definidos</h3><p>Cada línea agrupa sus fragancias para elegir rápido sin repetir productos innecesariamente.</p></article>
-          <article class="trust-card"><span class="trust-number">03</span><h3>Presentaciones flexibles</h3><p>Envase, recarga, sachet, frasco o al peso según la línea de producto.</p></article>
-          <article class="trust-card"><span class="trust-number">04</span><h3>Visual limpio</h3><p>La página deja respirar al producto y comunica orden, aseo y cuidado visual.</p></article>
+          <article class="trust-card">
+            <span class="trust-number">01</span>
+            <h3>Pedido inteligente</h3>
+            <p>El carrito arma un mensaje completo con producto, aroma, presentación, cantidad y total aproximado.</p>
+          </article>
+          <article class="trust-card">
+            <span class="trust-number">02</span>
+            <h3>Aromas memorables</h3>
+            <p>Lavanda, Romero, Almendras, Mandarina y más opciones para vender por experiencia sensorial.</p>
+          </article>
+          <article class="trust-card">
+            <span class="trust-number">03</span>
+            <h3>Formatos flexibles</h3>
+            <p>Envase, recarga, sachet, frasco y compra al peso según la línea de producto.</p>
+          </article>
+          <article class="trust-card">
+            <span class="trust-number">04</span>
+            <h3>Diseño minimalista</h3>
+            <p>La estética deja respirar al producto y transmite orden, limpieza y valor percibido alto.</p>
+          </article>
         </div>
       </div>
     </section>
@@ -304,452 +1743,712 @@
     <section class="page-shell" id="contacto">
       <div class="cta">
         <span class="eyebrow">Cute & Clean</span>
-        <h2>Arma tu pedido en segundos.</h2>
-        <p>Elige aroma, presentación y cantidad. Luego envía el pedido por WhatsApp para confirmar disponibilidad, pago y entrega.</p>
-        <button class="btn btn-primary" type="button" data-open-cart>Enviar mi pedido</button>
+        <h2>Haz que tu hogar huela como se ve el lujo.</h2>
+        <p>Arma tu pedido en segundos y envíalo por WhatsApp para confirmar disponibilidad, pago y entrega.</p>
+        <button class="btn btn-gold" type="button" data-open-cart>Enviar mi pedido</button>
       </div>
     </section>
   </main>
 
-  <footer class="footer page-shell">© <span id="year"></span> Cute &amp; Clean. Catálogo de productos de limpieza.</footer>
+  <footer class="footer page-shell">
+    © <span id="year"></span> Cute &amp; Clean. Catálogo premium de productos de limpieza.
+  </footer>
 
-  <button class="floating-cart" type="button" data-open-cart>🛒 Pedido <span class="cart-count" id="cartCount">0</span></button>
-  <div class="cart-overlay" id="cartOverlay" aria-hidden="true"></div>
-  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
-    <div class="cart-header">
-      <div><span class="eyebrow" style="margin-bottom:4px;">Pedido</span><h3>Tu carrito</h3></div>
-      <button class="icon-btn" type="button" id="cartClose" aria-label="Cerrar carrito">×</button>
+  <button class="floating-cart" type="button" data-open-cart aria-label="Abrir carrito">
+    🛒 Pedido <span class="cart-count" id="cartCount">0</span>
+  </button>
+
+  <div class="overlay" id="overlay" aria-hidden="true"></div>
+
+  <aside class="drawer" id="cartDrawer" aria-label="Carrito de pedido">
+    <div class="drawer-header">
+      <div>
+        <span class="eyebrow" style="margin-bottom: 6px;">Tu pedido</span>
+        <h3>Carrito premium</h3>
+      </div>
+      <button class="icon-button" type="button" data-close-cart aria-label="Cerrar carrito">×</button>
     </div>
-    <div class="cart-items" id="cartItems"></div>
-    <div class="cart-footer">
-      <div class="cart-total"><span>Total aproximado</span><strong id="cartTotal">$0.00</strong></div>
-      <div class="cart-actions">
-        <a class="btn btn-primary" id="cartWhatsApp" href="#" target="_blank" rel="noopener noreferrer">Enviar por WhatsApp</a>
-        <button class="btn btn-soft" type="button" id="cartClear">Vaciar carrito</button>
+
+    <div class="drawer-body">
+      <div id="cartItems"></div>
+
+      <div class="checkout-fields">
+        <label>
+          Nombre
+          <input id="customerName" type="text" placeholder="Ej. Slayder" autocomplete="name" />
+        </label>
+        <label>
+          Ciudad / sector
+          <input id="customerCity" type="text" placeholder="Ej. Ambato" autocomplete="address-level2" />
+        </label>
+        <label>
+          Nota para el pedido
+          <textarea id="customerNote" placeholder="Ej. Deseo confirmar disponibilidad, entrega y forma de pago."></textarea>
+        </label>
+      </div>
+    </div>
+
+    <div class="drawer-footer">
+      <div class="cart-total">
+        <span>Total aproximado</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <div class="drawer-actions">
+        <a class="btn btn-primary" id="checkoutWhatsApp" href="#" target="_blank" rel="noopener noreferrer">Enviar por WhatsApp</a>
+        <button class="btn btn-secondary" type="button" id="clearCart">Vaciar carrito</button>
       </div>
     </div>
   </aside>
 
-  <div class="modal-overlay" id="modalOverlay" aria-hidden="true"></div>
-  <section class="product-modal" id="productModal" aria-label="Detalle de producto">
-    <div class="modal-image-wrap"><img class="modal-image" id="modalImage" src="./assets/CC-001-LAVANDA.png" alt="Producto Cute & Clean" /></div>
-    <div class="modal-content">
-      <button class="icon-btn modal-close" type="button" id="modalClose" aria-label="Cerrar">×</button>
-      <span class="eyebrow" id="modalEyebrow">Textiles</span>
-      <h2 class="modal-title" id="modalTitle">Detergente líquido Lavanda</h2>
-      <p class="modal-copy" id="modalCopy"></p>
-      <div class="benefit-pills" id="modalBenefits"></div>
-      <div class="modal-form">
-        <div class="field"><label for="aromaSelect">Aroma</label><select id="aromaSelect"></select></div>
-        <div class="field"><label for="presentationSelect">Presentación</label><select id="presentationSelect"></select></div>
-        <div class="field"><label for="quantityInput">Cantidad</label><input id="quantityInput" type="number" min="1" step="1" value="1" /></div>
-        <div class="subtotal-box"><div><span>Subtotal</span><strong id="modalSubtotal">$0.00</strong></div><button class="btn btn-primary" type="button" id="modalAdd">Agregar al pedido</button></div>
+  <section class="modal" id="productModal" aria-label="Detalle de producto" aria-modal="true" role="dialog">
+    <div class="modal-card">
+      <div class="modal-media">
+        <img id="modalImage" src="./cute_clean_luxury_site/assets/detergente-lavanda.webp" alt="" />
+      </div>
+      <div class="modal-content">
+        <button class="icon-button modal-close" type="button" id="modalClose" aria-label="Cerrar detalle">×</button>
+        <span class="eyebrow" id="modalEyebrow">Detalle</span>
+        <h3 class="modal-title" id="modalTitle">Producto</h3>
+        <p class="modal-copy" id="modalCopy"></p>
+
+        <div class="benefits" id="modalBenefits"></div>
+
+        <form class="option-form" id="productForm">
+          <label>
+            Aroma
+            <select id="aromaSelect"></select>
+          </label>
+
+          <label>
+            Presentación
+            <select id="presentationSelect"></select>
+          </label>
+
+          <label>
+            Cantidad
+            <input id="quantityInput" type="number" min="1" value="1" inputmode="numeric" />
+          </label>
+        </form>
+
+        <div class="modal-summary">
+          <div>
+            <small>Subtotal</small>
+            <strong id="modalSubtotal">$0.00</strong>
+          </div>
+          <button class="btn btn-primary" type="button" id="modalAdd">Agregar al pedido</button>
+        </div>
       </div>
     </div>
   </section>
+
   <div class="toast" id="toast" role="status" aria-live="polite">Producto agregado</div>
 
   <script>
     const WHATSAPP_NUMBER = "593969869981";
-    const SHEET_ID = "1HliMkKOaBAU9ARlJ_arhcYWSJabFJwS4";
-    const SHEET_NAME = "Productos";
-    const SHEET_REFRESH_MS = 120000;
-    const IMAGE_BASE = "./assets/";
-    const EXACT_PNG_IMAGES = {
-      "CC-001-LORIOT.png": "CC-001-LORIOT.png",
-      "CC-001-LAVANDA.png": "CC-001-LAVANDA.png",
-      "CC-002-PRIMOR-SOFT.png": "CC-002-PRIMOR-SOFT.png",
-      "CC-002-SUAVE-FRESCURA.png": "CC-002-SUAVE-FRESCURA.png",
-      "CC-003-ALMENDRA.png": "CC-003-ALMENDRA.png",
-      "CC-003-MANDARINA.png": "CC-003-MANDARINA.png",
-      "CC-004-MANZANA-CANELA.png": "CC-004-MANZANA-CANELA.png",
-      "CC-004-ROMERO.png": "CC-004-ROMERO.png",
-      "CC-005-BAMBU-FRESH.png": "CC-005-BAMBU-FRESH.png",
-      "CC-005-MANZANA-CANELA.png": "CC-005-MANZANA-CANELA.png",
-      "CC-005-ROMERO.png": "CC-005-ROMERO.png"
-    };
-    const GENERAL_WHATSAPP = "Hola, quiero hacer un pedido de Cute & Clean. ¿Me ayudas a confirmar disponibilidad?";
-    const FALLBACK_SVG = "data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 900 1000'%3E%3Crect width='900' height='1000' fill='%23fffaf2'/%3E%3Ccircle cx='450' cy='390' r='180' fill='%23eadfcb'/%3E%3Ctext x='450' y='500' text-anchor='middle' font-family='Georgia' font-size='70' fill='%23263b2c' font-weight='700'%3ECute %26 Clean%3C/text%3E%3Ctext x='450' y='570' text-anchor='middle' font-family='Arial' font-size='28' fill='%23566455'%3EImagen no disponible%3C/text%3E%3C/svg%3E";
 
-    const fallbackRows = [
-      { sku: "CC-001-LAVANDA", line: "detergente", title: "Detergente líquido", variant: "Lavanda", category: "Textiles", image: "CC-001-LAVANDA.png", badge: "Ropa limpia", description: "Formulado para remover eficazmente la suciedad mientras protege las fibras de tus prendas. Deja una sensación de frescura y suavidad duradera.", benefits: ["Quita manchas", "Protege color", "Aroma delicado"], presentation: "Envase 4 Litros", price: 11.20 },
-      { sku: "CC-001-LAVANDA", line: "detergente", title: "Detergente líquido", variant: "Lavanda", category: "Textiles", image: "CC-001-LAVANDA.png", badge: "Ropa limpia", description: "Formulado para remover eficazmente la suciedad mientras protege las fibras de tus prendas. Deja una sensación de frescura y suavidad duradera.", benefits: ["Quita manchas", "Protege color", "Aroma delicado"], presentation: "Recarga envase 4 Litros", price: 10.20 },
-      { sku: "CC-001-LAVANDA", line: "detergente", title: "Detergente líquido", variant: "Lavanda", category: "Textiles", image: "CC-001-LAVANDA.png", badge: "Ropa limpia", description: "Formulado para remover eficazmente la suciedad mientras protege las fibras de tus prendas. Deja una sensación de frescura y suavidad duradera.", benefits: ["Quita manchas", "Protege color", "Aroma delicado"], presentation: "Al peso", price: 2.55, suffix: "por kg" },
-      { sku: "CC-001-LORIOT", line: "detergente", title: "Detergente líquido", variant: "Loriot", category: "Textiles", image: "CC-001-LORIOT.png", badge: "Ropa limpia", description: "Limpieza para prendas con sensación fresca y duradera. Pensado para cuidar la ropa y dejar un aroma limpio después de cada lavado.", benefits: ["Frescura duradera", "Protege color", "Uso diario"], presentation: "Envase 4 Litros", price: 11.20 },
-      { sku: "CC-001-LORIOT", line: "detergente", title: "Detergente líquido", variant: "Loriot", category: "Textiles", image: "CC-001-LORIOT.png", badge: "Ropa limpia", description: "Limpieza para prendas con sensación fresca y duradera. Pensado para cuidar la ropa y dejar un aroma limpio después de cada lavado.", benefits: ["Frescura duradera", "Protege color", "Uso diario"], presentation: "Recarga envase 4 Litros", price: 10.20 },
-      { sku: "CC-001-LORIOT", line: "detergente", title: "Detergente líquido", variant: "Loriot", category: "Textiles", image: "CC-001-LORIOT.png", badge: "Ropa limpia", description: "Limpieza para prendas con sensación fresca y duradera. Pensado para cuidar la ropa y dejar un aroma limpio después de cada lavado.", benefits: ["Frescura duradera", "Protege color", "Uso diario"], presentation: "Al peso", price: 2.55, suffix: "por kg" },
-
-      { sku: "CC-002-PRIMOR-SOFT", line: "suavizante", title: "Suavizante de ropa", variant: "Primor Soft", category: "Textiles", image: "CC-002-PRIMOR-SOFT.png", badge: "Suavidad", description: "Diseñado para aportar textura suave y un aroma delicado a tus prendas. Perfecto para mantener frescura en cada uso.", benefits: ["Fragancia duradera", "Neutraliza olores", "Textura suave"], presentation: "Envase 4 Litros", price: 8.60 },
-      { sku: "CC-002-PRIMOR-SOFT", line: "suavizante", title: "Suavizante de ropa", variant: "Primor Soft", category: "Textiles", image: "CC-002-PRIMOR-SOFT.png", badge: "Suavidad", description: "Diseñado para aportar textura suave y un aroma delicado a tus prendas. Perfecto para mantener frescura en cada uso.", benefits: ["Fragancia duradera", "Neutraliza olores", "Textura suave"], presentation: "Recarga envase 4 Litros", price: 7.60 },
-      { sku: "CC-002-PRIMOR-SOFT", line: "suavizante", title: "Suavizante de ropa", variant: "Primor Soft", category: "Textiles", image: "CC-002-PRIMOR-SOFT.png", badge: "Suavidad", description: "Diseñado para aportar textura suave y un aroma delicado a tus prendas. Perfecto para mantener frescura en cada uso.", benefits: ["Fragancia duradera", "Neutraliza olores", "Textura suave"], presentation: "Al peso", price: 1.90, suffix: "por kg" },
-      { sku: "CC-002-SUAVE-FRESCURA", line: "suavizante", title: "Suavizante de ropa", variant: "Suave Frescura", category: "Textiles", image: "CC-002-SUAVE-FRESCURA.png", badge: "Frescura", description: "Suavidad ligera y aroma limpio para cada lavado. Una opción fresca, delicada y fácil de amar en la rutina del hogar.", benefits: ["Aroma limpio", "Uso diario", "Sensación fresca"], presentation: "Envase 4 Litros", price: 8.60 },
-      { sku: "CC-002-SUAVE-FRESCURA", line: "suavizante", title: "Suavizante de ropa", variant: "Suave Frescura", category: "Textiles", image: "CC-002-SUAVE-FRESCURA.png", badge: "Frescura", description: "Suavidad ligera y aroma limpio para cada lavado. Una opción fresca, delicada y fácil de amar en la rutina del hogar.", benefits: ["Aroma limpio", "Uso diario", "Sensación fresca"], presentation: "Recarga envase 4 Litros", price: 7.60 },
-      { sku: "CC-002-SUAVE-FRESCURA", line: "suavizante", title: "Suavizante de ropa", variant: "Suave Frescura", category: "Textiles", image: "CC-002-SUAVE-FRESCURA.png", badge: "Frescura", description: "Suavidad ligera y aroma limpio para cada lavado. Una opción fresca, delicada y fácil de amar en la rutina del hogar.", benefits: ["Aroma limpio", "Uso diario", "Sensación fresca"], presentation: "Al peso", price: 1.90, suffix: "por kg" },
-
-      { sku: "CC-003-ALMENDRA", line: "jabon", title: "Jabón líquido para manos", variant: "Almendras", category: "Manos", image: "CC-003-ALMENDRA.png", badge: "Manos", description: "Limpieza antibacterial con sensación suave para el uso frecuente. Ideal para mantener las manos limpias y delicadamente perfumadas.", benefits: ["Cuidado suave", "Con aloe vera", "Aroma delicado"], presentation: "Envase 4 Litros", price: 9.00 },
-      { sku: "CC-003-ALMENDRA", line: "jabon", title: "Jabón líquido para manos", variant: "Almendras", category: "Manos", image: "CC-003-ALMENDRA.png", badge: "Manos", description: "Limpieza antibacterial con sensación suave para el uso frecuente. Ideal para mantener las manos limpias y delicadamente perfumadas.", benefits: ["Cuidado suave", "Con aloe vera", "Aroma delicado"], presentation: "Sachet 1.5 Litros", price: 3.50 },
-      { sku: "CC-003-ALMENDRA", line: "jabon", title: "Jabón líquido para manos", variant: "Almendras", category: "Manos", image: "CC-003-ALMENDRA.png", badge: "Manos", description: "Limpieza antibacterial con sensación suave para el uso frecuente. Ideal para mantener las manos limpias y delicadamente perfumadas.", benefits: ["Cuidado suave", "Con aloe vera", "Aroma delicado"], presentation: "Recarga envase 4 Litros", price: 8.00 },
-      { sku: "CC-003-ALMENDRA", line: "jabon", title: "Jabón líquido para manos", variant: "Almendras", category: "Manos", image: "CC-003-ALMENDRA.png", badge: "Manos", description: "Limpieza antibacterial con sensación suave para el uso frecuente. Ideal para mantener las manos limpias y delicadamente perfumadas.", benefits: ["Cuidado suave", "Con aloe vera", "Aroma delicado"], presentation: "Al peso", price: 2.00, suffix: "por kg" },
-      { sku: "CC-003-MANDARINA", line: "jabon", title: "Jabón líquido para manos", variant: "Mandarina", category: "Manos", image: "CC-003-MANDARINA.png", badge: "Manos", description: "Limpieza antibacterial con un toque cítrico. Una experiencia fresca, natural y reconfortante para el uso frecuente.", benefits: ["Energía fresca", "Con aloe vera", "Aroma cítrico"], presentation: "Envase 4 Litros", price: 9.00 },
-      { sku: "CC-003-MANDARINA", line: "jabon", title: "Jabón líquido para manos", variant: "Mandarina", category: "Manos", image: "CC-003-MANDARINA.png", badge: "Manos", description: "Limpieza antibacterial con un toque cítrico. Una experiencia fresca, natural y reconfortante para el uso frecuente.", benefits: ["Energía fresca", "Con aloe vera", "Aroma cítrico"], presentation: "Sachet 1.5 Litros", price: 3.50 },
-      { sku: "CC-003-MANDARINA", line: "jabon", title: "Jabón líquido para manos", variant: "Mandarina", category: "Manos", image: "CC-003-MANDARINA.png", badge: "Manos", description: "Limpieza antibacterial con un toque cítrico. Una experiencia fresca, natural y reconfortante para el uso frecuente.", benefits: ["Energía fresca", "Con aloe vera", "Aroma cítrico"], presentation: "Recarga envase 4 Litros", price: 8.00 },
-      { sku: "CC-003-MANDARINA", line: "jabon", title: "Jabón líquido para manos", variant: "Mandarina", category: "Manos", image: "CC-003-MANDARINA.png", badge: "Manos", description: "Limpieza antibacterial con un toque cítrico. Una experiencia fresca, natural y reconfortante para el uso frecuente.", benefits: ["Energía fresca", "Con aloe vera", "Aroma cítrico"], presentation: "Al peso", price: 2.00, suffix: "por kg" },
-
-      { sku: "CC-004-ROMERO", line: "desinfectante", title: "Desinfectante multiusos", variant: "Romero", category: "Superficies", image: "CC-004-ROMERO.png", badge: "Protección", description: "Ayuda a mantener pisos y superficies limpios, frescos y agradables. Ideal para hogar o negocio con aromas modernos.", benefits: ["Limpia", "Desinfecta", "Perfuma"], presentation: "Envase 4 Litros", price: 7.50 },
-      { sku: "CC-004-ROMERO", line: "desinfectante", title: "Desinfectante multiusos", variant: "Romero", category: "Superficies", image: "CC-004-ROMERO.png", badge: "Protección", description: "Ayuda a mantener pisos y superficies limpios, frescos y agradables. Ideal para hogar o negocio con aromas modernos.", benefits: ["Limpia", "Desinfecta", "Perfuma"], presentation: "Recarga envase 4 Litros", price: 6.60 },
-      { sku: "CC-004-ROMERO", line: "desinfectante", title: "Desinfectante multiusos", variant: "Romero", category: "Superficies", image: "CC-004-ROMERO.png", badge: "Protección", description: "Ayuda a mantener pisos y superficies limpios, frescos y agradables. Ideal para hogar o negocio con aromas modernos.", benefits: ["Limpia", "Desinfecta", "Perfuma"], presentation: "Al peso", price: 1.65, suffix: "por kg" },
-      { sku: "CC-005-ROMERO", line: "desinfectante", title: "Desinfectante multiusos", variant: "Romero", category: "Superficies", image: "CC-005-ROMERO.png", badge: "Protección", description: "Ayuda a mantener pisos y superficies limpios, frescos y agradables. Ideal para hogar o negocio con aromas modernos.", benefits: ["Limpia", "Desinfecta", "Perfuma"], presentation: "Frasco 750 ml", price: 2.00 },
-      { sku: "CC-004-MANZANA-CANELA", line: "desinfectante", title: "Desinfectante multiusos", variant: "Manzana y Canela", category: "Superficies", image: "CC-004-MANZANA-CANELA.png", badge: "Protección", description: "Aroma cálido y agradable para superficies, pisos y espacios de uso diario. Limpia, desinfecta y perfuma.", benefits: ["Aroma cálido", "Bactericida", "Uso frecuente"], presentation: "Envase 4 Litros", price: 7.50 },
-      { sku: "CC-004-MANZANA-CANELA", line: "desinfectante", title: "Desinfectante multiusos", variant: "Manzana y Canela", category: "Superficies", image: "CC-004-MANZANA-CANELA.png", badge: "Protección", description: "Aroma cálido y agradable para superficies, pisos y espacios de uso diario. Limpia, desinfecta y perfuma.", benefits: ["Aroma cálido", "Bactericida", "Uso frecuente"], presentation: "Recarga envase 4 Litros", price: 6.60 },
-      { sku: "CC-004-MANZANA-CANELA", line: "desinfectante", title: "Desinfectante multiusos", variant: "Manzana y Canela", category: "Superficies", image: "CC-004-MANZANA-CANELA.png", badge: "Protección", description: "Aroma cálido y agradable para superficies, pisos y espacios de uso diario. Limpia, desinfecta y perfuma.", benefits: ["Aroma cálido", "Bactericida", "Uso frecuente"], presentation: "Al peso", price: 1.65, suffix: "por kg" },
-      { sku: "CC-005-MANZANA-CANELA", line: "desinfectante", title: "Desinfectante multiusos", variant: "Manzana y Canela", category: "Superficies", image: "CC-005-MANZANA-CANELA.png", badge: "Protección", description: "Aroma cálido y agradable para superficies, pisos y espacios de uso diario. Limpia, desinfecta y perfuma.", benefits: ["Aroma cálido", "Bactericida", "Uso frecuente"], presentation: "Frasco 750 ml", price: 2.00 },
-      { sku: "CC-005-BAMBU-FRESH", line: "desinfectante", title: "Desinfectante multiusos", variant: "Bambú Fresh", category: "Superficies", image: "CC-005-BAMBU-FRESH.png", badge: "Protección", description: "Aroma limpio y fresco para uso diario. Ayuda a mantener tus espacios protegidos y con sensación de pureza.", benefits: ["Aroma limpio", "Protección diaria", "Frescura"], presentation: "Frasco 750 ml", price: 2.00 }
+    const products = [
+      {
+        id: "detergente-lavanda",
+        line: "detergente",
+        title: "Detergente líquido",
+        variant: "Lavanda",
+        category: "Textiles",
+        image: "./cute_clean_luxury_site/assets/detergente-lavanda.webp",
+        badge: "Ropa premium",
+        description: "Formulado para remover eficazmente la suciedad mientras protege las fibras de tus prendas. Deja una sensación de frescura y suavidad duradera.",
+        benefits: ["Quita manchas", "Protege color", "Aroma delicado"],
+        aromas: ["Lavanda", "Loriot"],
+        options: [
+          { label: "Envase 4 Litros", price: 11.20 },
+          { label: "Recarga envase 4 Litros", price: 10.20 },
+          { label: "Al peso", price: 2.55, suffix: "por kg" }
+        ]
+      },
+      {
+        id: "suavizante-primor-soft",
+        line: "suavizante",
+        title: "Suavizante de ropa",
+        variant: "Primor Soft",
+        category: "Textiles",
+        image: "./cute_clean_luxury_site/assets/suavizante-primor-soft.webp",
+        badge: "Suavidad",
+        description: "Diseñado para aportar textura suave y un aroma delicado a tus prendas. Perfecto para quienes buscan confort y frescura en cada uso.",
+        benefits: ["Fragancia duradera", "Neutraliza olores", "Textura suave"],
+        aromas: ["Primor Soft", "Suave Frescura"],
+        options: [
+          { label: "Envase 4 Litros", price: 8.60 },
+          { label: "Recarga envase 4 Litros", price: 7.60 },
+          { label: "Al peso", price: 1.90, suffix: "por kg" }
+        ]
+      },
+      {
+        id: "suavizante-suave-frescura",
+        line: "suavizante",
+        title: "Suavizante de ropa",
+        variant: "Suave Frescura",
+        category: "Textiles",
+        image: "./cute_clean_luxury_site/assets/suavizante-suave-frescura.webp",
+        badge: "Frescura",
+        description: "Suavidad ligera y aroma limpio para cada lavado. Una opción fresca, delicada y fácil de amar en la rutina del hogar.",
+        benefits: ["Aroma limpio", "Uso diario", "Sensación fresca"],
+        aromas: ["Suave Frescura", "Primor Soft"],
+        options: [
+          { label: "Envase 4 Litros", price: 8.60 },
+          { label: "Recarga envase 4 Litros", price: 7.60 },
+          { label: "Al peso", price: 1.90, suffix: "por kg" }
+        ]
+      },
+      {
+        id: "desinfectante-romero",
+        line: "desinfectante",
+        title: "Desinfectante multiusos",
+        variant: "Romero",
+        category: "Superficies",
+        image: "./cute_clean_luxury_site/assets/desinfectante-romero.webp",
+        badge: "Protección",
+        description: "Ayuda a mantener pisos y superficies limpios, frescos y agradables. Ideal para hogar o negocio con aromas modernos y acogedores.",
+        benefits: ["Limpia", "Desinfecta", "Perfuma"],
+        aromas: ["Romero", "Manzana y Canela", "Bambú Fresh"],
+        options: [
+          { label: "Envase 4 Litros", price: 7.50 },
+          { label: "Frasco 750 ml", price: 2.00 },
+          { label: "Recarga envase 4 Litros", price: 6.60 },
+          { label: "Al peso", price: 1.65, suffix: "por kg" }
+        ]
+      },
+      {
+        id: "jabon-almendras",
+        line: "jabon",
+        title: "Jabón líquido para manos",
+        variant: "Almendras",
+        category: "Manos",
+        image: "./cute_clean_luxury_site/assets/jabon-almendras.webp",
+        badge: "Cuidado suave",
+        description: "Inspirado en el equilibrio entre limpieza y bienestar. Con aloe vera para ayudar a mantener la piel hidratada, suave y confortable.",
+        benefits: ["Antibacterial", "Con aloe vera", "Hidratación delicada"],
+        aromas: ["Almendras", "Mandarina"],
+        options: [
+          { label: "Envase 4 Litros", price: 9.00 },
+          { label: "Sachet 1.5 Litros", price: 4.00 },
+          { label: "Recarga envase 4 Litros", price: 8.00 },
+          { label: "Al peso", price: 2.00, suffix: "por kg" }
+        ]
+      },
+      {
+        id: "jabon-mandarina",
+        line: "jabon",
+        title: "Jabón líquido para manos",
+        variant: "Mandarina",
+        category: "Manos",
+        image: "./cute_clean_luxury_site/assets/jabon-mandarina.webp",
+        badge: "Toque cítrico",
+        description: "Limpieza antibacterial con un toque cítrico. Una experiencia fresca, natural y aromáticamente reconfortante para el uso frecuente.",
+        benefits: ["Energía fresca", "Con aloe vera", "Aroma cítrico"],
+        aromas: ["Mandarina", "Almendras"],
+        options: [
+          { label: "Envase 4 Litros", price: 9.00 },
+          { label: "Sachet 1.5 Litros", price: 4.00 },
+          { label: "Recarga envase 4 Litros", price: 8.00 },
+          { label: "Al peso", price: 2.00, suffix: "por kg" }
+        ]
+      }
     ];
 
-    let rawRows = [...fallbackRows];
-    let groups = [];
-    let cart = [];
-    let currentGroup = null;
-    let currentProduct = null;
+    const kits = {
+      ropa: {
+        title: "Pack ropa de lujo",
+        text: "Una combinación para prendas limpias, suaves y con aroma elegante.",
+        items: [
+          { id: "detergente-lavanda", option: "Envase 4 Litros", qty: 1 },
+          { id: "suavizante-primor-soft", option: "Envase 4 Litros", qty: 1 }
+        ]
+      },
+      casa: {
+        title: "Pack casa fresca",
+        text: "Para pisos, superficies y textiles con una sensación herbal, limpia y ordenada.",
+        items: [
+          { id: "desinfectante-romero", option: "Frasco 750 ml", qty: 1 },
+          { id: "detergente-lavanda", option: "Envase 4 Litros", qty: 1 }
+        ]
+      },
+      manos: {
+        title: "Pack manos suaves",
+        text: "Dos aromas para una limpieza frecuente que no se siente agresiva.",
+        items: [
+          { id: "jabon-almendras", option: "Sachet 1.5 Litros", qty: 1 },
+          { id: "jabon-mandarina", option: "Sachet 1.5 Litros", qty: 1 }
+        ]
+      },
+      completo: {
+        title: "Pack full ritual",
+        text: "Una selección para elevar lavandería, superficies y lavado de manos.",
+        items: [
+          { id: "detergente-lavanda", option: "Envase 4 Litros", qty: 1 },
+          { id: "suavizante-suave-frescura", option: "Envase 4 Litros", qty: 1 },
+          { id: "desinfectante-romero", option: "Frasco 750 ml", qty: 2 },
+          { id: "jabon-mandarina", option: "Sachet 1.5 Litros", qty: 1 }
+        ]
+      }
+    };
+
+    const heroSlides = [
+      {
+        image: "./cute_clean_luxury_site/assets/detergente-lavanda.webp",
+        tag: "Lavanda que relaja y limpia",
+        title: "Detergente líquido Lavanda",
+        copy: "Máxima limpieza con aroma delicado. Ideal para prendas que quieres sentir frescas, suaves y con presencia."
+      },
+      {
+        image: "./cute_clean_luxury_site/assets/desinfectante-romero.webp",
+        tag: "Limpieza natural y eficaz",
+        title: "Desinfectante Romero",
+        copy: "Frescura herbal y protección total para pisos y superficies con sensación de hogar impecable."
+      },
+      {
+        image: "./cute_clean_luxury_site/assets/jabon-mandarina.webp",
+        tag: "Energía fresca para tus manos",
+        title: "Jabón líquido Mandarina",
+        copy: "Limpieza antibacterial con toque cítrico y aloe vera para una experiencia fresca."
+      }
+    ];
 
     const productGrid = document.getElementById("productGrid");
     const searchInput = document.getElementById("searchInput");
     const categorySelect = document.getElementById("categorySelect");
+    const sortSelect = document.getElementById("sortSelect");
+    const overlay = document.getElementById("overlay");
+    const cartDrawer = document.getElementById("cartDrawer");
     const cartCount = document.getElementById("cartCount");
-    const cartPanel = document.getElementById("cartPanel");
-    const cartOverlay = document.getElementById("cartOverlay");
     const cartItems = document.getElementById("cartItems");
     const cartTotal = document.getElementById("cartTotal");
-    const cartWhatsApp = document.getElementById("cartWhatsApp");
-    const cartClose = document.getElementById("cartClose");
-    const cartClear = document.getElementById("cartClear");
-    const modalOverlay = document.getElementById("modalOverlay");
+    const checkoutWhatsApp = document.getElementById("checkoutWhatsApp");
+    const clearCart = document.getElementById("clearCart");
+    const toast = document.getElementById("toast");
+    const navWhatsapp = document.getElementById("navWhatsapp");
+
     const productModal = document.getElementById("productModal");
-    const modalClose = document.getElementById("modalClose");
     const modalImage = document.getElementById("modalImage");
     const modalTitle = document.getElementById("modalTitle");
-    const modalEyebrow = document.getElementById("modalEyebrow");
     const modalCopy = document.getElementById("modalCopy");
     const modalBenefits = document.getElementById("modalBenefits");
+    const modalEyebrow = document.getElementById("modalEyebrow");
+    const modalClose = document.getElementById("modalClose");
     const aromaSelect = document.getElementById("aromaSelect");
     const presentationSelect = document.getElementById("presentationSelect");
     const quantityInput = document.getElementById("quantityInput");
     const modalSubtotal = document.getElementById("modalSubtotal");
     const modalAdd = document.getElementById("modalAdd");
-    const toast = document.getElementById("toast");
-    const sheetStatus = document.getElementById("sheetStatus");
-    const navWhatsApp = document.getElementById("navWhatsApp");
 
-    const normalize = (text) => (text == null ? "" : String(text)).toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").trim();
-    const normalizeKey = (text) => normalize(text).replace(/[^a-z0-9]/g, "");
-    const currency = (value) => new Intl.NumberFormat("en-US", { style: "currency", currency: "USD", minimumFractionDigits: 2 }).format(Number(value) || 0);
-    const escapeHtml = (value) => (value == null ? "" : String(value)).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
-    const parsePrice = (value) => Number(String(value || "0").replace(/[^0-9.,-]/g, "").replace(",", ".")) || 0;
-    const unique = (arr) => [...new Set(arr.filter(Boolean))];
+    const kitTitle = document.getElementById("kitTitle");
+    const kitText = document.getElementById("kitText");
+    const kitList = document.getElementById("kitList");
+    const addKitButton = document.getElementById("addKitButton");
 
-    function setSheetStatus(text) { sheetStatus.textContent = text; }
-    function cleanImageName(value, row = {}) {
-      let raw = String(value || "").trim().replace(/^assets\//i, "").replace(/^\.\/assets\//i, "");
-      raw = raw.split(/[\n,;]/)[0].trim();
-      raw = raw.replace(/\.webp$/i, ".png");
-      if (!raw && row.sku) raw = `${row.sku}.png`;
-      if (raw && !/\.png$/i.test(raw)) raw += ".png";
-      raw = raw.replace(/\s+/g, "-");
-      const key = Object.keys(EXACT_PNG_IMAGES).find((name) => normalizeKey(name) === normalizeKey(raw));
-      return key || raw;
-    }
-    function assetImage(fileName) {
-      const clean = cleanImageName(fileName);
-      const key = Object.keys(EXACT_PNG_IMAGES).find((name) => normalizeKey(name) === normalizeKey(clean));
-      return key ? IMAGE_BASE + encodeURIComponent(key) : IMAGE_BASE + encodeURIComponent(clean);
-    }
-    function imageFor(row) { return assetImage(row.image || `${row.sku}.png`); }
+    let cart = JSON.parse(localStorage.getItem("cuteCleanCart") || "[]");
+    let currentProduct = products[0];
+    let selectedKit = "ropa";
 
-    const prefixDefaults = {
-      "CC-001": { line: "detergente", title: "Detergente líquido", category: "Textiles", badge: "Ropa limpia", benefits: ["Quita manchas", "Protege color", "Aroma delicado"] },
-      "CC-002": { line: "suavizante", title: "Suavizante de ropa", category: "Textiles", badge: "Frescura", benefits: ["Fragancia duradera", "Neutraliza olores", "Textura suave"] },
-      "CC-003": { line: "jabon", title: "Jabón líquido para manos", category: "Manos", badge: "Manos", benefits: ["Antibacterial", "Con aloe vera", "Uso frecuente"] },
-      "CC-004": { line: "desinfectante", title: "Desinfectante multiusos", category: "Superficies", badge: "Protección", benefits: ["Limpia", "Desinfecta", "Perfuma"] },
-      "CC-005": { line: "desinfectante", title: "Desinfectante multiusos", category: "Superficies", badge: "Protección", benefits: ["Limpia", "Desinfecta", "Perfuma"] }
-    };
+    const currency = (value) => new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+      minimumFractionDigits: 2
+    }).format(Number(value) || 0);
 
-    function inferFromSku(sku) {
-      const clean = String(sku || "").toUpperCase();
-      const prefix = Object.keys(prefixDefaults).find((item) => clean.startsWith(item));
-      return prefixDefaults[prefix] || { line: normalizeKey(clean || "producto"), title: "Producto Cute & Clean", category: "General", badge: "Limpieza", benefits: ["Orden", "Aseo", "Frescura"] };
-    }
-    function inferAroma(row, productText) {
-      const text = normalize(`${row.aroma || ""} ${row.aromas || ""} ${productText || ""} ${row.imagen || ""} ${row.image || ""} ${row.sku || ""}`);
-      if (text.includes("lavanda")) return "Lavanda";
-      if (text.includes("loriot")) return "Loriot";
-      if (text.includes("primor")) return "Primor Soft";
-      if (text.includes("suave") && text.includes("frescura")) return "Suave Frescura";
-      if (text.includes("almendra")) return "Almendras";
-      if (text.includes("mandarina")) return "Mandarina";
-      if (text.includes("bambu") || text.includes("bamboo")) return "Bambú Fresh";
-      if (text.includes("manzana") || text.includes("canela")) return "Manzana y Canela";
-      if (text.includes("romero")) return "Romero";
-      return String(row.aroma || row.aromas || "Original").trim();
-    }
-    function inferPresentation(row) {
-      const text = normalize(`${row.presentacion || row.presentación || ""} ${row.producto || ""} ${row.descripcion || ""} ${row.sku || ""}`);
-      if (text.includes("750")) return "Frasco 750 ml";
-      if (text.includes("sachet") || text.includes("1.5") || text.includes("1,5")) return "Sachet 1.5 Litros";
-      if (text.includes("recarga")) return "Recarga envase 4 Litros";
-      if (text.includes("peso") || text.includes("kg")) return "Al peso";
-      if (text.includes("4 litro") || text.includes("4l") || text.includes("envase")) return "Envase 4 Litros";
-      return "Envase 4 Litros";
-    }
-    function mapSheetRow(row) {
-      const sku = String(row.sku || row.codigo || row.código || "").trim().toUpperCase();
-      if (!sku.startsWith("CC-")) return null;
-      const activeText = normalize(row.activo || row.estado || "si");
-      if (["no", "false", "falso", "0", "inactivo"].includes(activeText)) return null;
-      const defaults = inferFromSku(sku);
-      const productText = row.producto || row.nombre || row.product || row.name || defaults.title;
-      const aroma = inferAroma(row, productText);
-      const presentation = inferPresentation(row);
-      const price = parsePrice(row.preciousd || row.precio || row.valor || row.price || row.pvp || 0);
-      const image = cleanImageName(row.imagen || row.image || row.foto || "", { sku });
-      return {
-        sku,
-        line: row.linea || row.línea || defaults.line,
-        title: row.linea_producto || row.lineaproducto || defaults.title,
-        variant: aroma,
-        category: row.categoria || row.categoría || defaults.category,
-        image,
-        badge: row.etiqueta || row.badge || defaults.badge,
-        description: row.descripcion || row.descripción || defaults.description || "Producto Cute & Clean para una rutina de limpieza clara y agradable.",
-        benefits: row.beneficios ? String(row.beneficios).split(/[,;|]/).map((x) => x.trim()).filter(Boolean) : defaults.benefits,
-        presentation,
-        price: price || fallbackPrice(defaults.line, presentation),
-        suffix: normalize(presentation).includes("peso") ? "por kg" : ""
-      };
-    }
-    function fallbackPrice(line, presentation) {
-      const key = `${line}|${presentation}`;
-      const map = {
-        "detergente|Envase 4 Litros": 11.20, "detergente|Recarga envase 4 Litros": 10.20, "detergente|Al peso": 2.55,
-        "suavizante|Envase 4 Litros": 8.60, "suavizante|Recarga envase 4 Litros": 7.60, "suavizante|Al peso": 1.90,
-        "jabon|Envase 4 Litros": 9.00, "jabon|Sachet 1.5 Litros": 3.50, "jabon|Recarga envase 4 Litros": 8.00, "jabon|Al peso": 2.00,
-        "desinfectante|Envase 4 Litros": 7.50, "desinfectante|Frasco 750 ml": 2.00, "desinfectante|Recarga envase 4 Litros": 6.60, "desinfectante|Al peso": 1.65
-      };
-      return map[key] || 0;
+    const normalize = (value) => (value || "")
+      .toString()
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "");
+
+    function minPrice(product) {
+      return Math.min(...product.options.map((option) => option.price));
     }
 
-    function buildGroups(rows) {
-      const map = new Map();
-      rows.forEach((row) => {
-        const key = row.line || normalizeKey(row.title);
-        if (!map.has(key)) {
-          map.set(key, { line: key, title: row.title, category: row.category, badge: row.badge, description: row.description, benefits: row.benefits, rows: [] });
-        }
-        map.get(key).rows.push(row);
-      });
-      groups = [...map.values()].map((group) => {
-        group.aromas = unique(group.rows.map((row) => row.variant));
-        group.presentations = unique(group.rows.map((row) => row.presentation)).map((label) => {
-          const sample = group.rows.find((row) => row.presentation === label) || group.rows[0];
-          return { label, price: sample.price, suffix: sample.suffix || (normalize(label).includes("peso") ? "por kg" : "") };
-        });
-        return group;
-      });
+    function getOption(product, label) {
+      return product.options.find((option) => option.label === label) || product.options[0];
     }
 
-    function getRowFor(group, aroma, presentation) {
-      return group.rows.find((row) => row.variant === aroma && row.presentation === presentation)
-        || group.rows.find((row) => row.variant === aroma)
-        || group.rows.find((row) => row.presentation === presentation)
-        || group.rows[0];
+    function escapeHtml(value) {
+      return (value === undefined || value === null ? "" : value)
+        .toString()
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
     }
-    function minPrice(group) { return Math.min(...group.rows.map((row) => Number(row.price) || 0).filter((n) => n > 0)); }
+
+    function buildGeneralWhatsApp() {
+      const message = "Hola, quiero recibir información de Cute & Clean y armar un pedido premium de productos de limpieza.";
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function showToast(message) {
+      toast.textContent = message;
+      toast.classList.add("is-visible");
+      window.clearTimeout(showToast.timer);
+      showToast.timer = window.setTimeout(() => toast.classList.remove("is-visible"), 1700);
+    }
+
+    function saveCart() {
+      localStorage.setItem("cuteCleanCart", JSON.stringify(cart));
+    }
 
     function renderProducts() {
       const term = normalize(searchInput.value);
       const category = categorySelect.value;
-      const visible = groups.filter((group) => {
-        const searchText = normalize([group.title, group.category, group.badge, group.description, group.aromas.join(" "), group.presentations.map((p) => p.label).join(" "), group.rows.map((row) => row.description).join(" ")].join(" "));
-        return searchText.includes(term) && (category === "Todos" || group.category === category);
+      const sort = sortSelect.value;
+
+      let visibleProducts = products.filter((product) => {
+        const searchable = normalize([
+          product.title,
+          product.variant,
+          product.category,
+          product.description,
+          product.benefits.join(" "),
+          product.aromas.join(" ")
+        ].join(" "));
+
+        return searchable.includes(term) && (category === "Todos" || product.category === category);
       });
-      if (!visible.length) {
-        productGrid.innerHTML = `<div class="empty-state"><strong>No encontré productos con ese filtro.</strong><br />Prueba buscando por aroma, línea o beneficio: lavanda, manos, textiles, romero.</div>`;
+
+      if (sort === "priceAsc") visibleProducts.sort((a, b) => minPrice(a) - minPrice(b));
+      if (sort === "priceDesc") visibleProducts.sort((a, b) => minPrice(b) - minPrice(a));
+      if (sort === "name") visibleProducts.sort((a, b) => `${a.title} ${a.variant}`.localeCompare(`${b.title} ${b.variant}`));
+
+      if (!visibleProducts.length) {
+        productGrid.innerHTML = `
+          <div class="empty-state">
+            <strong>No encontré productos con ese filtro.</strong><br />
+            Prueba buscando por aroma, línea o beneficio: lavanda, manos, textiles, romero.
+          </div>
+        `;
         return;
       }
-      productGrid.innerHTML = visible.map((group) => {
-        const firstRow = getRowFor(group, group.aromas[0], group.presentations[0] && group.presentations[0].label);
-        return `
-          <article class="product-card">
-            <div class="product-image-wrap">
-              <span class="product-badge">${escapeHtml(group.badge)}</span>
-              <img class="product-image" src="${imageFor(firstRow)}" alt="${escapeHtml(group.title)}" loading="lazy" onerror="this.onerror=null;this.src='${FALLBACK_SVG}';" />
+
+      productGrid.innerHTML = visibleProducts.map((product) => `
+        <article class="product-card">
+          <div class="product-image-wrap">
+            <span class="product-badge">${escapeHtml(product.badge)}</span>
+            <img class="product-image" src="${product.image}" alt="${escapeHtml(product.title)} ${escapeHtml(product.variant)}" loading="lazy" />
+          </div>
+          <div class="product-content">
+            <p class="product-category">${escapeHtml(product.category)}</p>
+            <h3 class="product-title">${escapeHtml(product.title)}<br><span>${escapeHtml(product.variant)}</span></h3>
+            <p class="product-copy">${escapeHtml(product.description)}</p>
+            <div class="benefits">
+              ${product.benefits.map((benefit) => `<span>${escapeHtml(benefit)}</span>`).join("")}
             </div>
-            <div class="product-content">
-              <p class="product-category">${escapeHtml(group.category)}</p>
-              <h3 class="product-name">${escapeHtml(group.title)}</h3>
-              <p class="product-description">${escapeHtml(group.description)}</p>
-              <div class="aroma-pills">${group.aromas.slice(0, 4).map((aroma) => `<span>${escapeHtml(aroma)}</span>`).join("")}</div>
-              <div class="card-footer">
-                <div class="price-from"><small>Desde</small><strong>${currency(minPrice(group))}</strong></div>
-                <button class="btn btn-primary" type="button" data-open-product="${escapeHtml(group.line)}">Ver opciones</button>
+            <div class="card-footer">
+              <div class="price-row">
+                <div class="price-box">
+                  <span>Desde</span>
+                  <strong>${currency(minPrice(product))}</strong>
+                </div>
+                <div class="aroma-pill">${escapeHtml(product.variant)}</div>
               </div>
+              <button class="btn btn-primary" type="button" data-product-id="${product.id}">Ver opciones</button>
             </div>
-          </article>`;
-      }).join("");
+          </div>
+        </article>
+      `).join("");
     }
 
-    function openProduct(line) {
-      currentGroup = groups.find((group) => group.line === line);
-      if (!currentGroup) return;
-      aromaSelect.innerHTML = currentGroup.aromas.map((aroma) => `<option value="${escapeHtml(aroma)}">${escapeHtml(aroma)}</option>`).join("");
-      presentationSelect.innerHTML = currentGroup.presentations.map((option) => {
+    function openModal(productId) {
+      const product = products.find((item) => item.id === productId);
+      if (!product) return;
+
+      currentProduct = product;
+      modalImage.src = product.image;
+      modalImage.alt = `${product.title} ${product.variant}`;
+      modalTitle.textContent = `${product.title} ${product.variant}`;
+      modalCopy.textContent = product.description;
+      modalEyebrow.textContent = product.category;
+      modalBenefits.innerHTML = product.benefits.map((benefit) => `<span>${escapeHtml(benefit)}</span>`).join("");
+
+      aromaSelect.innerHTML = product.aromas.map((aroma) => `<option value="${escapeHtml(aroma)}"${aroma === product.variant ? " selected" : ""}>${escapeHtml(aroma)}</option>`).join("");
+      presentationSelect.innerHTML = product.options.map((option) => {
         const detail = option.suffix ? ` / ${option.suffix}` : "";
         return `<option value="${escapeHtml(option.label)}">${escapeHtml(option.label)} — ${currency(option.price)}${detail}</option>`;
       }).join("");
       quantityInput.value = 1;
-      updateModalProduct();
+      updateModalSubtotal();
+
       productModal.classList.add("is-open");
-      modalOverlay.classList.add("is-open");
-      modalOverlay.setAttribute("aria-hidden", "false");
       document.body.style.overflow = "hidden";
     }
-    function updateModalProduct() {
-      if (!currentGroup) return;
-      const aroma = aromaSelect.value || currentGroup.aromas[0];
-      const presentation = presentationSelect.value || (currentGroup.presentations[0] && currentGroup.presentations[0].label);
-      currentProduct = getRowFor(currentGroup, aroma, presentation);
-      modalImage.src = imageFor(currentProduct);
-      modalImage.alt = `${currentGroup.title} ${aroma}`;
-      modalTitle.textContent = `${currentGroup.title} ${aroma}`;
-      modalEyebrow.textContent = currentGroup.category;
-      modalCopy.textContent = currentProduct.description || currentGroup.description;
-      modalBenefits.innerHTML = (currentProduct.benefits || currentGroup.benefits || []).map((b) => `<span>${escapeHtml(b)}</span>`).join("");
-      updateSubtotal();
-    }
-    function updateSubtotal() {
-      const quantity = Math.max(1, Number(quantityInput.value) || 1);
-      const option = currentGroup.presentations.find((p) => p.label === presentationSelect.value) || currentGroup.presentations[0];
-      const row = getRowFor(currentGroup, aromaSelect.value, option.label);
-      modalSubtotal.textContent = currency((row.price || option.price) * quantity);
-    }
+
     function closeModal() {
       productModal.classList.remove("is-open");
-      modalOverlay.classList.remove("is-open");
-      modalOverlay.setAttribute("aria-hidden", "true");
       document.body.style.overflow = "";
     }
 
-    function addConfiguredProduct() {
-      if (!currentGroup || !currentProduct) return;
+    function updateModalSubtotal() {
+      const option = getOption(currentProduct, presentationSelect.value);
       const quantity = Math.max(1, Number(quantityInput.value) || 1);
-      const presentation = presentationSelect.value;
-      const row = getRowFor(currentGroup, aromaSelect.value, presentation);
-      const key = `${currentGroup.line}|${aromaSelect.value}|${presentation}`;
-      const existing = cart.find((item) => item.key === key);
-      if (existing) existing.quantity += quantity;
-      else cart.push({ key, title: currentGroup.title, variant: aromaSelect.value, category: currentGroup.category, presentation, price: row.price, suffix: row.suffix, quantity });
-      renderCart(); showToast("Producto agregado al pedido"); closeModal(); openCart();
+      modalSubtotal.textContent = currency(option.price * quantity);
     }
-    function renderCart() {
-      const count = cart.reduce((sum, item) => sum + item.quantity, 0);
-      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      cartCount.textContent = count;
-      cartTotal.textContent = currency(total);
-      cartWhatsApp.href = buildWhatsAppLink(buildCartMessage());
-      if (!cart.length) { cartItems.innerHTML = `<div class="cart-empty">Tu pedido está vacío.<br />Agrega productos desde el catálogo.</div>`; return; }
-      cartItems.innerHTML = cart.map((item) => `
-        <div class="cart-item">
-          <div><div class="cart-item-title">${escapeHtml(item.title)} ${escapeHtml(item.variant)}</div><div class="cart-item-detail">${escapeHtml(item.presentation)} · ${currency(item.price)}${item.suffix ? ` / ${escapeHtml(item.suffix)}` : ""}</div></div>
-          <div class="cart-controls"><button class="qty-btn" data-cart-action="decrease" data-cart-key="${escapeHtml(item.key)}">−</button><strong>${item.quantity}</strong><button class="qty-btn" data-cart-action="increase" data-cart-key="${escapeHtml(item.key)}">+</button></div>
-          <button class="remove-btn" data-cart-action="remove" data-cart-key="${escapeHtml(item.key)}">Eliminar</button>
-        </div>`).join("");
-    }
-    function buildWhatsAppLink(message) { return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`; }
-    function buildCartMessage() {
-      if (!cart.length) return GENERAL_WHATSAPP;
-      const lines = cart.map((item, index) => `${index + 1}. ${item.title} ${item.variant} | ${item.presentation} | Cantidad: ${item.quantity} | Subtotal: ${currency(item.price * item.quantity)}`).join("\n");
-      const total = cart.reduce((sum, item) => sum + item.price * item.quantity, 0);
-      return `Hola, quiero hacer este pedido de Cute & Clean:\n\n${lines}\n\nTotal aproximado: ${currency(total)}\n\n¿Me confirmas disponibilidad y forma de pago?`;
-    }
-    function openCart() { cartPanel.classList.add("is-open"); cartOverlay.classList.add("is-open"); cartOverlay.setAttribute("aria-hidden", "false"); }
-    function closeCart() { cartPanel.classList.remove("is-open"); cartOverlay.classList.remove("is-open"); cartOverlay.setAttribute("aria-hidden", "true"); }
-    function changeQuantity(key, delta) { const item = cart.find((i) => i.key === key); if (!item) return; item.quantity += delta; if (item.quantity <= 0) cart = cart.filter((i) => i.key !== key); renderCart(); }
-    function showToast(text) { toast.textContent = text; toast.classList.add("is-visible"); clearTimeout(showToast.timer); showToast.timer = setTimeout(() => toast.classList.remove("is-visible"), 1600); }
 
-    function rowsFromGviz(response) {
-      const table = response && response.table;
-      if (!table || !Array.isArray(table.cols) || !Array.isArray(table.rows)) return [];
-      const headers = table.cols.map((col, i) => normalizeKey(col.label || col.id || `col${i + 1}`));
-      return table.rows.map((row) => {
-        const item = {};
-        headers.forEach((header, i) => {
-          const cell = row.c && row.c[i];
-          item[header] = cell ? (cell.f != null ? cell.f : cell.v) : "";
+    function addConfiguredProduct() {
+      const option = getOption(currentProduct, presentationSelect.value);
+      const quantity = Math.max(1, Number(quantityInput.value) || 1);
+      addToCart({
+        productId: currentProduct.id,
+        title: currentProduct.title,
+        variant: aromaSelect.value,
+        category: currentProduct.category,
+        presentation: option.label,
+        price: option.price,
+        suffix: option.suffix || "",
+        image: currentProduct.image
+      }, quantity);
+      closeModal();
+    }
+
+    function getCartKey(item) {
+      return [item.productId, item.variant, item.presentation].join("|");
+    }
+
+    function addToCart(item, quantity = 1) {
+      const key = getCartKey(item);
+      const existing = cart.find((cartItem) => cartItem.key === key);
+
+      if (existing) {
+        existing.quantity += quantity;
+      } else {
+        cart.push({
+          key,
+          ...item,
+          quantity
         });
-        return item;
-      });
-    }
-    function loadSheetJsonp() {
-      return new Promise((resolve, reject) => {
-        const callbackName = `cuteCleanSheet_${Date.now()}_${Math.random().toString(36).slice(2)}`;
-        const script = document.createElement("script");
-        const timeout = setTimeout(() => { cleanup(); reject(new Error("Google Sheets tardó demasiado en responder.")); }, 12000);
-        function cleanup() { clearTimeout(timeout); delete window[callbackName]; if (script.parentNode) script.parentNode.removeChild(script); }
-        window[callbackName] = (response) => { cleanup(); if (!response || response.status === "error") reject(new Error("Google Sheets no devolvió datos válidos.")); else resolve(response); };
-        script.onerror = () => { cleanup(); reject(new Error("No se pudo conectar con Google Sheets.")); };
-        const query = encodeURIComponent("select *");
-        script.src = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?sheet=${encodeURIComponent(SHEET_NAME)}&tq=${query}&tqx=responseHandler:${callbackName}&cache=${Date.now()}`;
-        document.body.appendChild(script);
-      });
-    }
-    async function loadProductsFromSheet(showStatus = false) {
-      if (showStatus) setSheetStatus("Conectando con Google Sheets...");
-      try {
-        const response = await loadSheetJsonp();
-        const sheetRows = rowsFromGviz(response).map(mapSheetRow).filter(Boolean);
-        if (sheetRows.length) {
-          rawRows = sheetRows;
-          buildGroups(rawRows);
-          renderProducts();
-          setSheetStatus(`Google Sheets conectado. Productos cargados: ${sheetRows.length}. Última revisión: ${new Date().toLocaleTimeString()}.`);
-          return;
-        }
-        throw new Error("No se encontraron productos CC- activos en la hoja.");
-      } catch (error) {
-        console.warn("No se pudo cargar Google Sheets:", error);
-        setSheetStatus(`No se pudo leer Google Sheets. Se muestra el catálogo local de respaldo. Detalle: ${error.message}`);
       }
+
+      renderCart();
+      showToast("Producto agregado al pedido");
     }
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-    navWhatsApp.href = buildWhatsAppLink(GENERAL_WHATSAPP);
-    buildGroups(rawRows);
-    renderProducts();
-    renderCart();
-    loadProductsFromSheet(true);
-    setInterval(() => loadProductsFromSheet(false), SHEET_REFRESH_MS);
+    function changeQty(key, delta) {
+      const item = cart.find((cartItem) => cartItem.key === key);
+      if (!item) return;
+
+      item.quantity += delta;
+      if (item.quantity <= 0) {
+        cart = cart.filter((cartItem) => cartItem.key !== key);
+      }
+
+      renderCart();
+    }
+
+    function removeItem(key) {
+      cart = cart.filter((cartItem) => cartItem.key !== key);
+      renderCart();
+    }
+
+    function renderCart() {
+      const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      cartCount.textContent = totalItems;
+      cartTotal.textContent = currency(total);
+
+      if (!cart.length) {
+        cartItems.innerHTML = `
+          <div class="cart-empty">
+            Tu pedido aún está vacío.<br />
+            Agrega productos y aquí se armará un mensaje elegante para WhatsApp.
+          </div>
+        `;
+      } else {
+        cartItems.innerHTML = cart.map((item) => `
+          <div class="cart-item">
+            <div>
+              <div class="cart-title">${escapeHtml(item.title)} — ${escapeHtml(item.variant)}</div>
+              <div class="cart-detail">${escapeHtml(item.presentation)}${item.suffix ? ` · ${escapeHtml(item.suffix)}` : ""}</div>
+              <div class="cart-price">${currency(item.price * item.quantity)}</div>
+            </div>
+            <div class="qty-control">
+              <button type="button" data-qty="-1" data-key="${escapeHtml(item.key)}">−</button>
+              <strong>${item.quantity}</strong>
+              <button type="button" data-qty="1" data-key="${escapeHtml(item.key)}">+</button>
+            </div>
+            <button class="cart-remove" type="button" data-remove="${escapeHtml(item.key)}">Eliminar</button>
+          </div>
+        `).join("");
+      }
+
+      checkoutWhatsApp.href = buildCheckoutWhatsApp();
+      saveCart();
+    }
+
+    function buildCheckoutWhatsApp() {
+      const name = document.getElementById("customerName").value.trim();
+      const city = document.getElementById("customerCity").value.trim();
+      const note = document.getElementById("customerNote").value.trim();
+
+      if (!cart.length) {
+        return buildGeneralWhatsApp();
+      }
+
+      const productLines = cart.map((item, index) => {
+        const suffix = item.suffix ? ` (${item.suffix})` : "";
+        return `${index + 1}. ${item.title} - ${item.variant} | ${item.presentation}${suffix} | Cantidad: ${item.quantity} | Subtotal: ${currency(item.price * item.quantity)}`;
+      }).join("\n");
+
+      const total = cart.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+
+      const message = `Hola, quiero hacer este pedido Cute & Clean:
+
+${productLines}
+
+Total aproximado: ${currency(total)}
+${name ? `Nombre: ${name}` : ""}
+${city ? `Ciudad/sector: ${city}` : ""}
+${note ? `Nota: ${note}` : ""}
+
+Por favor confírmame disponibilidad, forma de pago y entrega.`;
+
+      return `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(message)}`;
+    }
+
+    function openCart() {
+      overlay.classList.add("is-open");
+      cartDrawer.classList.add("is-open");
+      overlay.setAttribute("aria-hidden", "false");
+    }
+
+    function closeCart() {
+      overlay.classList.remove("is-open");
+      cartDrawer.classList.remove("is-open");
+      overlay.setAttribute("aria-hidden", "true");
+    }
+
+    function renderKit() {
+      const kit = kits[selectedKit];
+      kitTitle.textContent = kit.title;
+      kitText.textContent = kit.text;
+
+      kitList.innerHTML = kit.items.map((kitItem) => {
+        const product = products.find((item) => item.id === kitItem.id);
+        const option = getOption(product, kitItem.option);
+        return `<li><span>${escapeHtml(product.title)} — ${escapeHtml(product.variant)}</span><em>${currency(option.price * kitItem.qty)}</em></li>`;
+      }).join("");
+    }
+
+    function addSelectedKit() {
+      const kit = kits[selectedKit];
+      kit.items.forEach((kitItem) => {
+        const product = products.find((item) => item.id === kitItem.id);
+        const option = getOption(product, kitItem.option);
+        addToCart({
+          productId: product.id,
+          title: product.title,
+          variant: product.variant,
+          category: product.category,
+          presentation: option.label,
+          price: option.price,
+          suffix: option.suffix || "",
+          image: product.image
+        }, kitItem.qty);
+      });
+      openCart();
+    }
+
+    function rotateHero() {
+      let index = 0;
+      const image = document.getElementById("heroProduct");
+      const tag = document.getElementById("heroTag");
+      const title = document.getElementById("heroTitle");
+      const copy = document.getElementById("heroCopy");
+
+      window.setInterval(() => {
+        index = (index + 1) % heroSlides.length;
+        image.style.opacity = "0";
+        image.style.transform = "translate(-50%, -48%) scale(.98)";
+        window.setTimeout(() => {
+          const slide = heroSlides[index];
+          image.src = slide.image;
+          tag.textContent = slide.tag;
+          title.textContent = slide.title;
+          copy.textContent = slide.copy;
+          image.style.opacity = "1";
+          image.style.transform = "translate(-50%, -50%) scale(1)";
+        }, 260);
+      }, 4300);
+    }
+
+    productGrid.addEventListener("click", (event) => {
+      const button = event.target.closest("[data-product-id]");
+      if (button) openModal(button.dataset.productId);
+    });
+
+    document.querySelectorAll("[data-open-cart]").forEach((button) => {
+      button.addEventListener("click", openCart);
+    });
+
+    document.querySelectorAll("[data-close-cart]").forEach((button) => {
+      button.addEventListener("click", closeCart);
+    });
+
+    overlay.addEventListener("click", closeCart);
+
+    cartItems.addEventListener("click", (event) => {
+      const qtyButton = event.target.closest("[data-qty]");
+      const removeButton = event.target.closest("[data-remove]");
+
+      if (qtyButton) changeQty(qtyButton.dataset.key, Number(qtyButton.dataset.qty));
+      if (removeButton) removeItem(removeButton.dataset.remove);
+    });
+
+    clearCart.addEventListener("click", () => {
+      cart = [];
+      renderCart();
+      showToast("Carrito vacío");
+    });
+
+    ["customerName", "customerCity", "customerNote"].forEach((id) => {
+      document.getElementById(id).addEventListener("input", () => {
+        checkoutWhatsApp.href = buildCheckoutWhatsApp();
+      });
+    });
+
+    modalClose.addEventListener("click", closeModal);
+    productModal.addEventListener("click", (event) => {
+      if (event.target === productModal) closeModal();
+    });
+
+    presentationSelect.addEventListener("change", updateModalSubtotal);
+    quantityInput.addEventListener("input", updateModalSubtotal);
+    modalAdd.addEventListener("click", addConfiguredProduct);
 
     searchInput.addEventListener("input", renderProducts);
     categorySelect.addEventListener("change", renderProducts);
-    productGrid.addEventListener("click", (event) => { const button = event.target.closest("[data-open-product]"); if (button) openProduct(button.getAttribute("data-open-product")); });
-    aromaSelect.addEventListener("change", updateModalProduct);
-    presentationSelect.addEventListener("change", updateModalProduct);
-    quantityInput.addEventListener("input", updateSubtotal);
-    modalAdd.addEventListener("click", addConfiguredProduct);
-    modalClose.addEventListener("click", closeModal);
-    modalOverlay.addEventListener("click", closeModal);
-    document.querySelectorAll("[data-open-cart]").forEach((button) => button.addEventListener("click", openCart));
-    cartClose.addEventListener("click", closeCart);
-    cartOverlay.addEventListener("click", closeCart);
-    cartClear.addEventListener("click", () => { cart = []; renderCart(); });
-    cartItems.addEventListener("click", (event) => {
-      const button = event.target.closest("[data-cart-action]");
-      if (!button) return;
-      const action = button.getAttribute("data-cart-action");
-      const key = button.getAttribute("data-cart-key");
-      if (action === "increase") changeQuantity(key, 1);
-      if (action === "decrease") changeQuantity(key, -1);
-      if (action === "remove") { cart = cart.filter((item) => item.key !== key); renderCart(); }
+    sortSelect.addEventListener("change", renderProducts);
+
+    document.querySelectorAll(".choice-btn").forEach((button) => {
+      button.addEventListener("click", () => {
+        document.querySelectorAll(".choice-btn").forEach((item) => item.classList.remove("is-active"));
+        button.classList.add("is-active");
+        selectedKit = button.dataset.kit;
+        renderKit();
+      });
     });
+
+    addKitButton.addEventListener("click", addSelectedKit);
+
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") {
+        closeModal();
+        closeCart();
+      }
+    });
+
+    navWhatsapp.href = buildGeneralWhatsApp();
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    renderProducts();
+    renderKit();
+    renderCart();
+    rotateHero();
   </script>
 </body>
 </html>
